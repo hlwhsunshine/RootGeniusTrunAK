@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="82dp" android:layout_marginTop="15dp">
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_logo" android:layout_width="70dp" android:layout_height="70dp" android:layout_marginLeft="10dp" android:src="@drawable/def_logo_icon" android:contentDescription="@string/string_content_description"/>
+            <TextView android:textSize="@dimen/sp_14" android:textColor="#ffb1b1b1" android:layout_gravity="left|center_vertical|center_horizontal|center" android:id="@+id/tv_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="详情描述文字"/>
+        </LinearLayout>
+        <com.shuame.rootgenius.p115ui.view.ScreenShotScrollView android:id="@+id/screen_shot_scrollview" android:scrollbars="none" android:fadingEdge="none" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="15dp"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="90dp">
+        <com.shuame.rootgenius.p115ui.view.TextProgressBar android:id="@+id/tpb_detail_progress" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:progress="50" android:progressDrawable="@drawable/app_detail_progressbar" android:layout_centerInParent="true" shuame:textSize="16" style="?android:attr/progressBarStyleHorizontal"/>
+    </RelativeLayout>
+</LinearLayout>

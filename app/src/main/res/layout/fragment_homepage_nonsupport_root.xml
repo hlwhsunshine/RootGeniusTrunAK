@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_nonsupport_root" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include layout="@layout/view_titlebar"/>
+        <ImageView android:paddingTop="@dimen/titlebar_bottom_space" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/homepage_nonsupport_root_icon" android:layout_weight="1" android:contentDescription="@string/string_content_description"/>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.2">
+            <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="center_horizontal" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/homepage_nonsupport_root_text"/>
+            <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="bottom|center_vertical|center_horizontal|center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp" android:text="@string/homepage_nonsupport_root_text"/>
+            <LinearLayout android:gravity="bottom|center_vertical|center_horizontal|center" android:orientation="horizontal" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp">
+                <TextView android:textSize="@dimen/sp_16" android:textColor="@color/textcolor_dark_gray2" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/root_done_fail_remind_text_2"/>
+                <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="center_horizontal" android:id="@+id/tv_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/string_percent_sign_init_value"/>
+                <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/string_percent_sign"/>
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout android:paddingLeft="15dp" android:paddingRight="15dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.2">
+            <Button android:textSize="@dimen/sp_18" android:textColor="@color/white" android:id="@+id/btn_see_solution" android:background="@drawable/selector_new_def_fill_button" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:text="@string/more_see_solution" android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/sp_16" android:textColor="@color/textcolor_dark_green" android:gravity="center_horizontal" android:id="@+id/v_introduce" android:layout_width="match_parent" android:layout_height="40dp" android:text="@string/bbx_title_pre_root" android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+    <include android:visibility="gone" layout="@layout/view_bbx"/>
+</RelativeLayout>

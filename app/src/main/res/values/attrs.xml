@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="arc_offset" format="integer">
+    </attr>
+    <attr name="padding" format="float">
+    </attr>
+    <attr name="paint_width" format="float">
+    </attr>
+    <attr name="circle_duration" format="integer">
+    </attr>
+    <attr name="scale_duration" format="integer">
+    </attr>
+    <attr name="min_arc_length" format="float">
+    </attr>
+    <attr name="max_arc_length" format="float">
+    </attr>
+    <attr name="max_progress" format="integer">
+    </attr>
+    <attr name="curr_progress" format="integer">
+    </attr>
+    <attr name="transparency" format="integer">
+    </attr>
+    <attr name="slipswitch_on_bg" format="reference">
+    </attr>
+    <attr name="slipswitch_off_bg" format="reference">
+    </attr>
+    <attr name="slipswitch_icon" format="reference">
+    </attr>
+    <attr name="textSize" format="integer">
+    </attr>
+</resources>

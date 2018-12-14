@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <ScrollView android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="@dimen/titlebar_height" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:src="@drawable/shuame_guide_title_bg" android:scaleType="fitXY" android:contentDescription="@string/string_content_description"/>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginTop="25dp" android:layout_marginRight="10dp">
+                <ImageView android:layout_width="0dp" android:layout_height="wrap_content" android:src="@drawable/shuame_guide_line_left" android:scaleType="fitXY" android:layout_weight="1" android:contentDescription="@string/string_content_description"/>
+                <TextView android:textSize="@dimen/sp_14" android:textColor="#ff999999" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:text="@string/shuame_guide_remind_title"/>
+                <ImageView android:layout_width="0dp" android:layout_height="wrap_content" android:src="@drawable/shuame_guide_line_right" android:scaleType="fitXY" android:layout_weight="1" android:contentDescription="@string/string_content_description"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp">
+                <ImageView android:id="@+id/v_page_btn_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selector_shuame_guide_item_left_btn" android:scaleType="fitXY" android:contentDescription="@string/string_content_description"/>
+                <android.support.p015v4.view.ViewPager android:id="@+id/view_pager" android:layout_width="0dp" android:layout_height="90dp" android:layout_weight="1"/>
+                <ImageView android:id="@+id/v_page_btn_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selector_shuame_guide_item_right_btn" android:scaleType="fitXY" android:contentDescription="@string/string_content_description"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@+id/page_indicator" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                <com.shuame.rootgenius.p115ui.view.TextProgressBar android:id="@+id/tpb_detail_progress" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="17dp" android:progress="100" android:progressDrawable="@drawable/app_detail_progressbar" android:layout_centerVertical="true" style="?android:attr/progressBarStyleHorizontal"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

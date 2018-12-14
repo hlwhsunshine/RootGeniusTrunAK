@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="44dp" android:src="@drawable/about_img_logo" android:contentDescription="@string/string_content_description"/>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@+id/iv_logo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:src="@drawable/about_txt_logo" android:contentDescription="@string/string_content_description"/>
+        <TextView android:textSize="@dimen/sp_15" android:textColor="@color/black_text_color" android:layout_gravity="center_horizontal" android:id="@+id/contentText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="v1.1"/>
+        <TextView android:textSize="@dimen/sp_15" android:textColor="@color/textcolor_link" android:gravity="center_horizontal" android:linksClickable="true" android:id="@+id/weburl" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/about_dialog_text_4"/>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/black_text_color" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/about_dialog_text_2"/>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/black_text_color" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="20dp" android:text="@string/about_dialog_text_3"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/btn_done" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/selector_about_close_button" android:layout_alignParentRight="true"/>
+</RelativeLayout>

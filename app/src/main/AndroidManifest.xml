@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="89" android:versionName="2.2.89" package="com.shuame.rootgenius" platformBuildVersionCode="21" platformBuildVersionName="APKTOOL">
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17"/>
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:resizeable="true" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_MTK_MMHW"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-feature android:name="android.hardware.wifi"/>
+    <uses-permission android:name="android.permission.ACCESS_CACHE_FILESYSTEM"/>
+    <uses-permission android:name="android.permission.DIAGNOSTIC"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application android:theme="@style/Theme.Translucent.NoTitleBar" android:label="@string/app_name" android:icon="@drawable/app_ico" android:name="com.shuame.rootgenius.RootGeniusApp" android:allowBackup="true" android:installLocation="auto" android:largeHeap="true" android:supportsRtl="true">
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.shuame.rootgenius.p115ui.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.shuame.rootgenius.p115ui.GuideActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.homepage.HomepageActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.BbxListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.BbxDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.ShuameGuideActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.TreatyActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.MoreActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.SettingsActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.shuame.rootgenius.p115ui.RootFailActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/dialog21" android:name="com.shuame.rootgenius.p115ui.UpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.shuame.rootgenius.p115ui.rootremove.RootRemoveDoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.UpdateComponentFailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.FontReplaceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.FontPreviewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.FullViewPageActivity" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/ActivityDialogStyle" android:name="com.shuame.rootgenius.p115ui.dialog.MyActivityDialog"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.SeeSolutionActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.FeedBackIndexActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.FeedBackDetailActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustUnspecified|stateHidden|adjustResize"/>
+        <activity android:name="com.shuame.rootgenius.p115ui.JointPCActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <receiver android:name="com.shuame.rootgenius.receiver.PCBroadcastReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.shuame.rootgenius.openbuildinfunction"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.shuame.rootgenius.appmanager.p096ui.activity.AppUninstallActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.rootgenius.appmanager.p096ui.activity.RecycleBinActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:name="com.shuame.mobile.module.autoboot.p085ui.AutoBootManagerActivity" android:launchMode="singleTask" android:screenOrientation="portrait"/>
+        <activity android:theme="@style/dialog" android:name="com.shuame.rootgenius.hook.p112ui.UninstallWarnActivity" android:taskAffinity=":uninstall_warn_activity" android:excludeFromRecents="true" android:launchMode="singleInstance" android:screenOrientation="portrait"/>
+        <receiver android:name="com.shuame.rootgenius.hook.receiver.LibrtUpdateReciver">
+            <intent-filter>
+                <action android:name="shuame.intent.action.libupdate"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.shuame.rootgenius.receiver.CheckNewSupportRootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.shuame.ACTION_CHECK_NEW_SUPPORT_ROOT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.shuame.rootgenius.receiver.CheckAuthComponentUpdateReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.shuame.ACTION_CHECK_AUTH_COMPONENT_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.shuame.rootgenius.receiver.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.shuame.rootgenius.receiver.RebootReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="TA_APPKEY" android:value="AV41C5BW6XTM"/>
+        <meta-data android:name="APPKEY_DENGTA" android:value="0M300AL3H11GQAUX"/>
+        <meta-data android:name="CHANNEL_DENGTA" android:value="10001"/>
+        <meta-data android:name="InstallChannel" android:value="general_pc"/>
+        <meta-data android:name="FirstRelease" android:value="false"/>
+        <meta-data android:name="BaiduMobAd_APP_ID" android:value="d3b87f79"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.shuame.rootgenius.wxapi.WXEntryActivity" android:exported="true" android:launchMode="singleInstance"/>
+        <service android:name="com.p070qq.p071e.comm.DownloadService" android:exported="false"/>
+        <activity android:name="com.p070qq.p071e.ads.ADActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.baidu.mobads.AppActivity" android:configChanges="keyboard|keyboardHidden|orientation"/>
+        <activity android:name="com.baidu.mobad.feeds.BaiduActivity" android:configChanges="keyboard|keyboardHidden|orientation"/>
+    </application>
+</manifest>

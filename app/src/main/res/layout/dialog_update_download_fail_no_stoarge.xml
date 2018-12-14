@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/sp_24" android:textColor="@color/black" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="15dp" android:text="@string/string_prompt"/>
+    <View android:background="@color/black_menu_divider_color" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0.5dp"/>
+    <TextView android:textSize="20sp" android:textColor="#ff4d4d4d" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/update_remind_title" android:lineSpacingExtra="6dp"/>
+    <TextView android:textSize="17sp" android:textColor="#ff666666" android:layout_width="match_parent" android:layout_height="48dp" android:layout_marginTop="10dp" android:text="@string/downloading_fail_no_storage" android:lineSpacingExtra="6dp"/>
+    <LinearLayout android:gravity="right" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp">
+        <Button android:textSize="17sp" android:textColor="#ff666666" android:gravity="center" android:id="@+id/btn_not_storage_update_cancel" android:background="@drawable/selector_dialog21_btn_" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/string_cancel"/>
+        <Button android:textSize="17sp" android:textColor="@c1243a/dialog_btn_confirm_green" android:gravity="center" android:id="@+id/btn_not_storage_update_confirm" android:background="@drawable/selector_dialog21_btn_" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_retry_btn"/>
+    </LinearLayout>
+</LinearLayout>

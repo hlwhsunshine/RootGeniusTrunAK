@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@c1309c/autoboot_notification_icon" android:padding="10dp" android:layout_width="58dp" android:layout_height="58dp" android:src="@c1308b/autoboot_notification_icon" android:layout_centerVertical="true"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_toRightOf="@c1309c/autoboot_notification_icon" android:layout_centerVertical="true">
+        <LinearLayout android:orientation="horizontal" android:id="@c1309c/autoboot_notification_layout_top" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/font_size_39" android:id="@c1309c/text_Left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="发现“百度地图“等99个软件" android:singleLine="true" style="@style/NotificationTitle"/>
+            <TextView android:textSize="@dimen/font_size_39" android:id="@c1309c/text_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@c1311e/notification_auto_boot" style="@style/NotificationTitle"/>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/font_size_36" android:id="@c1309c/text_boot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@c1311e/notification_auto_boot_note" android:layout_below="@c1309c/autoboot_notification_layout_top" style="@style/NotificationTitle"/>
+    </RelativeLayout>
+</RelativeLayout>

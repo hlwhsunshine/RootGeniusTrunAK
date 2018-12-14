@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@c1309c/outsidelayout" android:background="@c1308b/yellow_gradient_bg" android:paddingTop="@dimen/translucent_status_height" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:id="@c1309c/titlebar" android:background="@android:color/transparent" android:layout_width="match_parent" android:layout_height="45dp">
+        <Button android:id="@c1309c/backBtn" android:background="@c1308b/back_bg" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <TextView android:textSize="@dimen/main_title_text_size" android:textColor="@color/white" android:gravity="center" android:id="@c1309c/centerTxt" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@c1311e/self_boot_manager_title" android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@c1309c/flowLayout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="18dp" android:layout_centerVertical="true">
+        <com.shuame.mobile.module.autoboot.p085ui.view.FlowMarkView android:id="@c1309c/flowMarkView" android:clickable="true" android:layout_width="match_parent" android:layout_height="240dp" android:layout_marginBottom="18dp"/>
+    </LinearLayout>
+    <View android:id="@c1309c/placeHolder" android:layout_width="match_parent" android:layout_height="200dp" android:layout_marginBottom="18dp" android:layout_below="@c1309c/titlebar"/>
+    <RelativeLayout android:id="@c1309c/result_layout" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@c1309c/placeHolder">
+        <ExpandableListView android:id="@c1309c/self_boot_list" android:background="@android:color/white" android:visibility="invisible" android:fadingEdge="none" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@null" android:cacheColorHint="#00000000" android:groupIndicator="@null" android:childDivider="@c1307a/gray_bg" android:divider="@c1307a/gray_bg" android:dividerHeight="1px" android:headerDividersEnabled="false" android:footerDividersEnabled="false" style="@style/VerticalScrollbar"/>
+        <include android:id="@c1309c/ok_layout" android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" layout="@c1310d/check_common_error"/>
+    </RelativeLayout>
+</RelativeLayout>

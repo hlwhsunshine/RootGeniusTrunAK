@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="vertical" android:id="@c1245c/normal_item_view" android:background="@drawable/item_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="4dp" android:layout_marginTop="2dp" android:layout_marginRight="4dp" android:layout_marginBottom="2dp">
+        <LinearLayout android:orientation="horizontal" android:id="@c1245c/item_main" android:layout_width="match_parent" android:layout_height="@c1244b/list_item_height">
+            <ImageView android:id="@c1245c/iv_appIcon" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginLeft="16dp" android:layout_marginTop="16dp"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginTop="16dp" android:layout_weight="1">
+                <TextView android:textSize="16sp" android:textColor="#ff333333" android:id="@c1245c/tv_appName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:layout_weight="1"/>
+                <TextView android:textSize="14sp" android:textColor="#ffbbbbbb" android:id="@c1245c/tv_appSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:layout_weight="1"/>
+            </LinearLayout>
+            <Button android:textSize="15sp" android:textColor="@c1243a/btn_uninstall_confirm_color" android:id="@c1245c/btn_uninstall_confirm" android:background="@color/white" android:padding="12dp" android:focusable="false" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginRight="6dp" android:text="@c1247e/btn_uninstall_confirm_label"/>
+            <Button android:textSize="15sp" android:textColor="@c1243a/btn_normal_app" android:id="@c1245c/btn_uninstall" android:background="@color/white" android:padding="12dp" android:focusable="false" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:layout_marginRight="6dp" android:text="@c1247e/btn_uninstall_label"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_splash" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include layout="@layout/view_not_titlebar"/>
+        <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/root_remove_succ_img" android:layout_weight="1" android:contentDescription="@string/string_content_description"/>
+        <View android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.3"/>
+        <View android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.1"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include android:visibility="invisible" layout="@layout/view_titlebar"/>
+        <LinearLayout android:orientation="vertical" android:id="@+id/ll_text" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.1">
+            <TextView android:textSize="@dimen/sp_20" android:textColor="#ff1fbf69" android:gravity="bottom|center_vertical|center_horizontal|center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/root_done_success_remind_text" android:layout_weight="0.7"/>
+            <TextView android:textSize="@dimen/sp_16" android:textColor="@color/textcolor_dark_gray" android:gravity="center" android:id="@+id/tv_remind_msg" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/homepage_rooted_reboot_remind_text" android:layout_weight="1"/>
+        </LinearLayout>
+        <include android:visibility="invisible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="0.3" layout="@layout/view_bbx"/>
+    </LinearLayout>
+</RelativeLayout>

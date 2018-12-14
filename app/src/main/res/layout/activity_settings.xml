@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:id="@+id/vitem_component_upgrade_remind" android:text="@string/more_settings_component_upgrade_remind" style="@style/more_item_textview"/>
+        <CheckBox android:id="@+id/cb_upgrade_remind_switch" android:background="@drawable/selector_switch_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16dp" android:button="@null" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <View style="@style/more_item_line"/>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="@c1244b/homepage_title_textsize" android:textColor="@color/textcolor_dark_black" android:gravity="left" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30dp" android:layout_marginTop="15dp" android:layout_marginBottom="15dp" android:text="@c1247e/dialog_is_uninstalling"/>
+    <LinearLayout android:background="@c1243a/dialog_progressbar_background_color" android:layout_width="match_parent" android:layout_height="4dp">
+        <com.shuame.rootgenius.appmanager.p096ui.view.CursorProgressbar android:id="@c1245c/dialog_cursor" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_horizontal" android:id="@c1245c/installing_app_icon" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="40dp" android:layout_marginBottom="15dp"/>
+    <TextView android:textSize="20sp" android:textColor="@c1243a/empty_notice_text" android:layout_gravity="center_horizontal" android:id="@c1245c/dialog_app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20dp" android:text="新浪微博"/>
+</LinearLayout>

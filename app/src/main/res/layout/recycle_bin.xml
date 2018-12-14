@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@c1243a/listview_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@c1246d/title_layout"/>
+    <com.shuame.rootgenius.appmanager.p096ui.view.SwipeDismissListView android:id="@c1245c/lv_recycle_list" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:listSelector="#00000000" android:divider="@null" android:layout_weight="1"/>
+    <TextView android:textSize="@c1244b/list_empty_notice_text" android:textColor="@c1243a/empty_notice_text" android:gravity="center" android:id="@c1245c/tv_recyclebin_empty" android:background="@color/white" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@c1247e/recyclebin_empty_text" android:layout_weight="1"/>
+    <ImageView android:background="#ffb0b0b0" android:layout_width="match_parent" android:layout_height="0.5dp"/>
+    <Button android:textSize="14sp" android:textColor="@c1243a/btn_recyclebin_text_color" android:layout_gravity="bottom" android:id="@c1245c/btn_clean_all" android:background="@drawable/selector_normal_button" android:layout_width="match_parent" android:layout_height="57dp" android:text="@c1247e/recycle_clean_button"/>
+</LinearLayout>

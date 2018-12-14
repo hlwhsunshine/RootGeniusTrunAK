@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_not_titlebar"/>
+    <com.shuame.rootgenius.p115ui.view.RemoveRootView android:id="@+id/remove_root_view" android:layout_width="match_parent" android:layout_height="@dimen/homepage_rooted_scan_circle_progress_height_width"/>
+    <TextView android:textSize="@dimen/sp_20" android:textColor="@color/textcolor_dark_black" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/circle_block_below_text_margin_top" android:text="@string/root_remove_ing_remid_text"/>
+</LinearLayout>

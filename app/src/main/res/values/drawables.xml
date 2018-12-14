@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="background">#ffecf1f4</drawable>
+    <drawable name="bbx_item_bg_gray">#ffebebeb</drawable>
+    <drawable name="bbx_item_bg_white">#ffffffff</drawable>
+    <drawable name="black_skin_text_color">#ff4c4c4c</drawable>
+    <drawable name="co_user_list_header_press">#ffdbdbdb</drawable>
+    <drawable name="dialog_new_bg">#ffffffff</drawable>
+    <drawable name="global_new_background_bg">#fff0f0f0</drawable>
+    <drawable name="green_list_item_color">#fffac0e2</drawable>
+    <drawable name="list_item_color">#ffd6d6d6</drawable>
+    <drawable name="notification_text_black">#ff000000</drawable>
+    <drawable name="qrcode_text_bg_white">#ffffffff</drawable>
+    <drawable name="red_list_item_color">#ffffcccc</drawable>
+    <drawable name="search_item_list_bg_color">#ffffffff</drawable>
+    <drawable name="tab_bottom_select_color">#ff559ceb</drawable>
+    <drawable name="taball">#ff77abcd</drawable>
+    <drawable name="textblue">#ff1477cd</drawable>
+    <drawable name="textgary">#ff8ea1ac</drawable>
+    <drawable name="textsoftmsg">#ff4c5d65</drawable>
+    <drawable name="textwhite">#ffffffff</drawable>
+    <drawable name="topic_special_agree_disable">#fff18b8b</drawable>
+    <drawable name="topic_special_agree_enable">#ffd40202</drawable>
+    <drawable name="topic_special_agree_pressed">#ffb30000</drawable>
+    <drawable name="topic_special_bg">#ffeeeeee</drawable>
+    <drawable name="trans">#00000000</drawable>
+    <drawable name="translucence_white">#80ffffff</drawable>
+    <drawable name="transparent">#00000000</drawable>
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <ScrollView android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView android:id="@+id/v_joint_pc_root" android:text="@string/more_joint_pc_root" android:drawableLeft="@drawable/more_joint_pc_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_remove_root" android:text="@string/more_remove_root" android:drawableLeft="@drawable/more_remove_root_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_relevance_weibo" android:layout_marginTop="6dp" android:text="@string/more_relevance_weibo" android:drawableLeft="@drawable/more_relevance_weibo_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_quick_feedback" android:text="@string/more_quick_feedback" android:drawableLeft="@drawable/more_quick_feedback_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_check_update" android:text="@string/more_check_update" android:drawableLeft="@drawable/more_check_update_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_about_me" android:text="@string/more_about_me" android:drawableLeft="@drawable/more_about_me_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+            <TextView android:id="@+id/v_settings" android:text="@string/more_settings" android:drawableLeft="@drawable/more_settings_ico" style="@style/more_item_textview"/>
+            <View style="@style/more_item_line"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

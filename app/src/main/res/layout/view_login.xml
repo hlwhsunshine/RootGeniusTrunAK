@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@drawable/guide_login_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+    <ImageView android:id="@+id/iv_logo_name" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/guide_logo_name" android:scaleType="centerInside" android:layout_weight="1.1" android:contentDescription="@string/string_content_description"/>
+    <TextView android:textSize="@dimen/sp_20" android:textColor="@color/white" android:gravity="center_horizontal" android:id="@+id/tv_ver" android:layout_width="match_parent" android:layout_height="match_parent" android:text="V1.6.71" android:layout_weight="1"/>
+    <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.15">
+        <CheckBox android:id="@+id/cb_check" android:background="@null" android:paddingRight="6dp" android:layout_width="40dp" android:layout_height="40dp" android:checked="true" android:button="@null" android:drawableRight="@drawable/selector_homepage_login_checkbox"/>
+        <TextView android:textSize="@dimen/sp_13" android:textColor="#ffc6eed8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/homepage_login_agree"/>
+        <TextView android:textSize="@dimen/sp_13" android:textColor="@color/white" android:linksClickable="true" android:id="@+id/tv_read_treaty" android:paddingRight="6dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/homepage_login_treaty"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.05">
+        <Button android:textSize="@dimen/sp_17" android:textColor="#ff1fbf69" android:id="@+id/btn_login" android:background="@drawable/selector_new_def_fill_white_button" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:layout_marginLeft="@dimen/homepage_login_btn_margin_left_right" android:layout_marginRight="@dimen/homepage_login_btn_margin_left_right" android:text="@string/homepage_login_text"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="10dp" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="15dp" android:paddingRight="15dp" android:layout_width="0dp" android:layout_height="42dp" android:layout_weight="1">
+            <TextView android:textSize="@dimen/sp_14" android:textColor="@color/textcolor_dark_black" android:ellipsize="end" android:id="@+id/tv_description" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="一句话描述" android:singleLine="true"/>
+            <TextView android:textSize="@dimen/sp_12" android:textColor="#ffc0c0c0" android:id="@+id/tv_appinfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="1.5dp" android:text="安装的软件名称" android:singleLine="true"/>
+        </LinearLayout>
+        <RelativeLayout android:layout_width="72dp" android:layout_height="36dp" android:layout_marginRight="15dp">
+            <com.shuame.rootgenius.p115ui.view.TextProgressBar android:id="@+id/tpb_progress" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:progress="0" android:progressDrawable="@drawable/xml_optimize_item_progressbar" style="?android:attr/progressBarStyleHorizontal"/>
+            <com.shuame.rootgenius.p115ui.view.OptimizeCircleProgressBar android:id="@+id/ocpb_progress" android:visibility="gone" android:layout_width="36dp" android:layout_height="36dp" android:layout_marginLeft="18dp"/>
+            <com.shuame.rootgenius.p115ui.view.OptimizeItemInstallView android:id="@+id/v_installing" android:visibility="gone" android:layout_width="36dp" android:layout_height="36dp" android:layout_centerInParent="true"/>
+            <ImageView android:id="@+id/v_done" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/optimize_item_done" android:scaleType="centerInside"/>
+            <Button android:textSize="@dimen/sp_12" android:textColor="#ff1fbf69" android:id="@+id/btn_download" android:background="@drawable/selector_optimize_item_button" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:text="按钮文案"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <View android:background="#fff0f0f0" android:layout_width="match_parent" android:layout_height="0.5dp" android:layout_marginLeft="15dp"/>
+</LinearLayout>

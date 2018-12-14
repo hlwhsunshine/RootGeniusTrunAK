@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@c1308b/list_item_bg_color" android:layout_width="match_parent" android:layout_height="match_parent" android:minHeight="@dimen/font_replace_footer_min_height">
+    <LinearLayout android:orientation="horizontal" android:id="@+id/iv_ztgj_logo" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/font_replace_item_margin_left" android:layout_marginTop="@dimen/font_replace_footer_margin_top" android:src="@drawable/zituguanjia"/>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/font_replace_footer_layout_margin_left">
+            <TextView android:textSize="@dimen/txt_size_48" android:textColor="#ff333333" android:id="@+id/tv_font_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/font_replace_footer_margin_top" android:text="@string/font_title"/>
+            <TextView android:textSize="@dimen/txt_size_36" android:textColor="#ff666666" android:id="@+id/tv_font_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/font_replace_footer_tv_margin_top" android:text="@string/font_text"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/font_replace_footer_iv_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/font_replace_footer_iv_margin_top" android:src="@drawable/font_next_icon" android:layout_alignParentRight="true" android:layout_centerInParent="true"/>
+    <ProgressBar android:id="@+id/progress" android:visibility="gone" android:layout_width="@dimen/font_replace_footer_progressbar_width" android:layout_height="@dimen/font_replace_footer_progressbar_height" android:layout_marginLeft="@dimen/font_replace_footer_progressbar_margin_left" android:layout_marginTop="@dimen/font_replace_footer_progressbar_margin_top" android:max="100" android:progressDrawable="@drawable/progressbar_mini_no_border" android:layout_below="@+id/iv_ztgj_logo" style="?android:attr/progressBarStyleHorizontal"/>
+</RelativeLayout>

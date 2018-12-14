@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:gravity="center" android:orientation="vertical" android:background="@drawable/normal_list_selector" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@+id/imageview" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2dp" android:src="@drawable/icon_sortapk_checked"/>
+        <TextView android:textSize="@dimen/b_size" android:textColor="@drawable/selector_textcolor_black" android:gravity="center" android:id="@+id/textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="名称排序"/>
+    </LinearLayout>
+    <View android:id="@+id/divider" android:background="@color/black_menu_divider_color" android:visibility="gone" android:layout_width="match_parent" android:layout_height="1px"/>
+</LinearLayout>

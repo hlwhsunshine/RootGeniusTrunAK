@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_prepare_root" android:layout_width="match_parent" android:layout_height="match_parent">
+        <include layout="@layout/view_titlebar"/>
+        <ImageView android:paddingTop="@dimen/titlebar_bottom_space" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/homepage_update_component_icon" android:layout_weight="1" android:contentDescription="@string/string_content_description"/>
+        <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/homepage_not_update_su_text" android:layout_weight="1.3"/>
+        <Button android:textSize="@dimen/sp_18" android:textColor="@color/white" android:id="@+id/btn_root" android:background="@drawable/selector_new_def_fill_button" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:layout_marginLeft="40dp" android:layout_marginTop="15dp" android:layout_marginRight="40dp" android:text="@string/homepage_update_root_component_btn_text"/>
+        <View android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.3"/>
+    </LinearLayout>
+</RelativeLayout>

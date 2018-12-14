@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <TextView android:textSize="@dimen/sp_16" android:textColor="@c1307a/bottom_btn1" android:gravity="center_vertical" android:id="@+id/feedback_have_suggestion_tv" android:background="@c1308b/list_item_bg_color" android:paddingLeft="@dimen/feedback_left_padding" android:layout_width="match_parent" android:layout_height="@dimen/feedback_suggest_height" android:text="@string/feedback_have_suggestion"/>
+    <TextView android:textSize="@dimen/sp_16" android:textColor="@color/feedback_gray" android:id="@+id/feedback_has_prob_tv" android:paddingLeft="@dimen/feedback_left_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/feedback_item_margin" android:layout_marginBottom="8dp" android:text="@string/feedback_have_prob"/>
+    <ListView android:id="@+id/feedback_index_lv" android:background="@color/background_for_all" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="wrap_content" android:divider="@drawable/feedback_lv_divider" android:dividerHeight="1px"/>
+</LinearLayout>

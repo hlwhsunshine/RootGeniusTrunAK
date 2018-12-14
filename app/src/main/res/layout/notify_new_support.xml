@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="64dp" internal:layout_maxHeight="64dp" internal:layout_minHeight="64dp">
+    <ImageView android:id="@+id/notify_support_ico" android:padding="10dp" android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/app_ico" android:scaleType="fitCenter" android:contentDescription="@string/string_content_description"/>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="fill_vertical" android:orientation="vertical" android:paddingLeft="6dp" android:paddingTop="2dp" android:paddingRight="8dp" android:paddingBottom="2dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="64dp" android:minHeight="64dp">
+        <TextView android:textSize="18sp" android:id="@+id/notify_support_title" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/NotificationTitle"/>
+        <TextView android:textSize="12sp" android:gravity="center_vertical" android:id="@+id/notify_support_msg" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/NotificationContent"/>
+    </LinearLayout>
+</FrameLayout>

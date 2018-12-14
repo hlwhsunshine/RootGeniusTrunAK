@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@c1245c/display_sys_component_view" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="14dp" android:textColor="#ffbbbbbb" android:gravity="center" android:layout_gravity="fill" android:id="@c1245c/tv_display" android:layout_width="match_parent" android:layout_height="78dp" android:text="@c1247e/display_sys_component_item"/>
+</LinearLayout>

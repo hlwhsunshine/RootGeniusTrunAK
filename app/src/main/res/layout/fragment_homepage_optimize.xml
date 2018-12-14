@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <RelativeLayout android:paddingTop="16dp" android:paddingBottom="23dp" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="0.96">
+        <com.shuame.rootgenius.p115ui.view.MobileOptimizeProgressBar android:id="@+id/v_progressbar" android:layout_width="match_parent" android:layout_height="match_parent"/>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <TextView android:textSize="@dimen/sp_14" android:textColor="#ff919191" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/optimize_tips_text_1"/>
+            <TextView android:textSize="@dimen/sp_14" android:textStyle="bold" android:textColor="#ff5b5b5b" android:id="@+id/tv_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%"/>
+            <TextView android:textSize="@dimen/sp_14" android:textColor="#ff919191" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/optimize_tips_text_2"/>
+            <TextView android:textSize="@dimen/sp_14" android:textColor="#ff919191" android:id="@+id/tv_suggest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/optimize_suggest_text_1"/>
+        </LinearLayout>
+        <Button android:textSize="@dimen/sp_14" android:textColor="#ffa2a2a2" android:id="@+id/btn_skip" android:background="@null" android:layout_width="80dp" android:layout_height="40dp" android:text="@string/optimize_skip_button_text" android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+        <ListView android:id="@+id/listview" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@drawable/transparent" android:divider="@drawable/transparent" android:layout_weight="1" android:fastScrollEnabled="false"/>
+        <Button android:textSize="@dimen/sp_18" android:textColor="@color/white" android:id="@+id/btn_onekey_optimize" android:background="@drawable/selector_new_def_fill_button" android:layout_width="match_parent" android:layout_height="@dimen/homepage_login_btn_height" android:layout_margin="15dp" android:text="@string/optimize_all_button_text" android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+</LinearLayout>

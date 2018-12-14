@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:id="@+id/frame_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:id="@+id/view_block_standard" android:background="@drawable/splash" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:id="@+id/iv_logo_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60dp" android:src="@drawable/about_img_logo" android:layout_centerHorizontal="true" android:contentDescription="@string/string_content_description"/>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@+id/iv_logo_name" android:paddingTop="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/splash_logo_name" android:scaleType="centerInside" android:layout_below="@+id/iv_logo_img" android:layout_centerHorizontal="true" android:contentDescription="@string/string_content_description"/>
+        <TextView android:textSize="@dimen/sp_11" android:textColor="@color/white" android:id="@+id/tv_ver" android:background="@drawable/ver_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="V1.3.9" android:layout_toRightOf="@+id/iv_logo_name" android:layout_alignTop="@+id/iv_logo_name"/>
+        <LinearLayout android:orientation="vertical" android:id="@+id/v_copyright" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <TextView android:textSize="@dimen/sp_14" android:textColor="@color/black_text_color" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="@string/about_dialog_text_2"/>
+            <TextView android:textSize="@dimen/sp_14" android:textColor="@color/black_text_color" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:layout_marginBottom="20dp" android:text="@string/about_dialog_text_3"/>
+        </LinearLayout>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@+id/iv_release_logo" android:layout_width="150dp" android:layout_height="wrap_content" android:src="@drawable/welcome_channel_logo" android:scaleType="centerInside" android:layout_above="@+id/v_copyright" android:layout_below="@+id/iv_logo_name" android:layout_centerHorizontal="true" android:contentDescription="@string/string_content_description"/>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@+id/ad_layout" android:background="@color/background_for_all" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:id="@+id/ad_container" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.8"/>
+        <RelativeLayout android:id="@+id/splash_bottom" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.2">
+            <ImageView android:id="@+id/img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/splash_bottom" android:layout_centerInParent="true"/>
+            <TextView android:textSize="10sp" android:textColor="#ff5b5b5b" android:id="@+id/app_versionname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@+id/img" android:layout_alignTop="@+id/img"/>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

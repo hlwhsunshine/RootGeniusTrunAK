@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:gravity="center" android:background="@color/white" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:gravity="center" android:id="@c1309c/flash_layout" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@c1309c/bottom">
+        <ImageView android:id="@c1309c/img_err" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/img_no_net" android:scaleType="center" android:layout_centerInParent="true"/>
+        <TextView android:textSize="@dimen/txt_size_48" android:textColor="@c1307a/dark_grey" android:gravity="center" android:id="@c1309c/tv_err_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/check_desc_margin_toplr" android:layout_marginTop="@dimen/check_common_error_desc_margin_top" android:layout_marginRight="@dimen/check_desc_margin_toplr" android:text="@c1311e/donot_support" android:layout_below="@c1309c/img_err" android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <include android:id="@c1309c/bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" layout="@c1310d/backup_bottom"/>
+</RelativeLayout>

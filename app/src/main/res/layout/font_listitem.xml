@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@c1308b/list_item_bg_color" android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="match_parent" android:minHeight="@dimen/font_replace_item_min_height">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent">
+        <TextView android:textSize="@dimen/txt_size_60" android:textColor="#ff333333" android:id="@+id/font_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/font_replace_item_margin_left" android:layout_marginTop="@dimen/font_replace_item_margin_top"/>
+        <TextView android:textSize="@dimen/txt_size_36" android:textColor="#ff666666" android:id="@+id/font_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/font_replace_item_margin_left"/>
+    </LinearLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_centerInParent="true">
+        <ProgressBar android:id="@+id/progress" android:layout_width="@dimen/font_replace_item_button_width" android:layout_height="@dimen/font_replace_item_button_height" android:layout_marginRight="@dimen/font_replace_item_margin_right" android:max="100" android:progressDrawable="@drawable/progressbar_mini_no_border" android:layout_alignParentRight="true" android:layout_centerInParent="true" style="?android:attr/progressBarStyleHorizontal"/>
+        <Button android:textColor="#ffffffff" android:gravity="center" android:id="@+id/use" android:background="@color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/text_btn_onekey_replace" android:layout_alignLeft="@+id/progress" android:layout_alignTop="@+id/progress" android:layout_alignRight="@+id/progress" android:layout_alignBottom="@+id/progress"/>
+    </RelativeLayout>
+</RelativeLayout>

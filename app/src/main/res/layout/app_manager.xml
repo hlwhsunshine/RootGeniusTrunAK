@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@c1243a/listview_background" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@c1246d/title_layout"/>
+    <LinearLayout android:id="@c1245c/linearLayout1" android:background="@color/global_title_bg" android:layout_width="match_parent" android:layout_height="@c1244b/app_manager_radio_title">
+        <TextView android:textSize="@c1244b/titlebar_pageview_selector_textsize" android:textColor="@c1243a/green_skin_title_color" android:gravity="center" android:id="@c1245c/tv_systemApp" android:layout_width="match_parent" android:layout_height="match_parent" android:text="预装应用" android:layout_weight="1"/>
+        <TextView android:textSize="@c1244b/titlebar_pageview_selector_textsize" android:textColor="@c1243a/green_skin_title_color" android:gravity="center" android:id="@c1245c/tv_app" android:layout_width="match_parent" android:layout_height="match_parent" android:text="普通应用" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout android:background="@color/global_title_bg" android:layout_width="match_parent" android:layout_height="3dp">
+        <ImageView android:id="@c1245c/cusor" android:background="@c1243a/textcolor_yellow" android:layout_width="180dp" android:layout_height="3dp" android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+    <include android:id="@c1245c/background_loading" android:visibility="gone" layout="@c1246d/loading_listview_data"/>
+    <android.support.p015v4.view.ViewPager android:id="@c1245c/viewPager" android:background="@color/white" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="3dp"/>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/sp_24" android:textColor="@color/black" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="15dp" android:text="@string/string_prompt"/>
+    <View android:background="@color/black_menu_divider_color" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0.5dp"/>
+    <TextView android:textSize="20sp" android:textColor="#ff4d4d4d" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/update_download_ing_msg" android:lineSpacingExtra="6dp"/>
+    <ProgressBar android:id="@+id/pb_percent" android:layout_width="match_parent" android:layout_height="6dp" android:layout_marginTop="12dp" android:progressDrawable="@drawable/progressbar" android:text="@string/update_remind_msg" android:lineSpacingExtra="6dp" style="?android:attr/progressBarStyleHorizontal"/>
+    <LinearLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp">
+        <TextView android:textSize="@dimen/sp_16" android:textColor="@color/black_text_color" android:id="@+id/tv_percent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/string_percent_sign_init_value"/>
+        <TextView android:textSize="@dimen/sp_16" android:textColor="@color/black_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/string_percent_sign"/>
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="25dp">
+        <Button android:textSize="17sp" android:textColor="#ff666666" android:gravity="center" android:background="@drawable/selector_dialog21_btn_" android:padding="8dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="@string/update_later"/>
+        <Button android:textSize="17sp" android:textColor="#ff666666" android:gravity="center" android:id="@+id/btn_cancel_now_download" android:background="@drawable/selector_dialog21_btn_" android:padding="8dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/string_cancel"/>
+    </LinearLayout>
+</LinearLayout>

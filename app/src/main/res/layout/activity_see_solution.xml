@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="6">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="3">
+            <ImageView android:paddingLeft="16dp" android:paddingTop="@dimen/see_solution_dot_padding" android:layout_width="@dimen/see_solution_img_padding" android:layout_height="match_parent" android:src="@drawable/see_solution_tipdot" android:scaleType="center" android:contentDescription="@string/string_content_description"/>
+            <TextView android:textSize="@dimen/sp_22" android:textColor="@c1243a/dialog_btn_confirm_green" android:paddingTop="@dimen/see_solution_dot_padding" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/more_see_solution_tip1"/>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/see_solution_msg_tvsize" android:textColor="@color/social_enable_color" android:gravity="center_vertical" android:paddingLeft="@dimen/see_solution_img_padding" android:paddingTop="4sp" android:paddingRight="@dimen/see_solution_img_padding" android:layout_width="match_parent" android:layout_height="0dp" android:text="@string/more_see_solution_msg1" android:layout_weight="7" android:lineSpacingExtra="6sp"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="7">
+        <ImageView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/see_solution_img_padding" android:src="@drawable/see_solution_notify" android:scaleType="fitStart" android:contentDescription="@string/string_content_description"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="7">
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:paddingLeft="16dp" android:paddingTop="@dimen/see_solution_dot_padding" android:layout_width="@dimen/see_solution_img_padding" android:layout_height="match_parent" android:src="@drawable/see_solution_tipdot" android:scaleType="center" android:contentDescription="@string/string_content_description"/>
+            <TextView android:textSize="@dimen/sp_22" android:textColor="@c1243a/dialog_btn_confirm_green" android:paddingTop="@dimen/see_solution_dot_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/more_see_solution_tip2"/>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/see_solution_msg_tvsize" android:textColor="@color/social_enable_color" android:paddingLeft="@dimen/see_solution_img_padding" android:paddingTop="6sp" android:paddingRight="@dimen/see_solution_img_padding" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/more_see_solution_msg2" android:lineSpacingExtra="6sp"/>
+        <TextView android:textSize="@dimen/see_solution_msg_tvsize" android:textColor="@color/blue_see_solution_getinpc" android:id="@+id/tv_see_solution_getinpc" android:paddingLeft="@dimen/see_solution_img_padding" android:paddingTop="6sp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/more_see_solution_getinpc"/>
+    </LinearLayout>
+</LinearLayout>

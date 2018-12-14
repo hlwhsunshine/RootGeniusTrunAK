@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:id="@+id/ll_bbx" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="@dimen/sp_16" android:textColor="#ff808080" android:gravity="center" android:id="@+id/tv_title_standard" android:visibility="gone" android:layout_width="match_parent" android:layout_height="40dp" android:text="@string/bbx_title_rooted"/>
+    <RelativeLayout android:id="@+id/ll_title_special" android:descendantFocusability="blocksDescendants" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1.02">
+        <TextView android:textSize="@dimen/sp_17" android:textColor="@color/textcolor_dark_green" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bbx_title_pre_root" android:layout_centerInParent="true"/>
+        <ImageView android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20dp" android:src="@drawable/selector_bbx_close_button" android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <GridView android:id="@+id/gv_bbx" android:background="@drawable/transparent" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:listSelector="@drawable/transparent" android:horizontalSpacing="1dp" android:verticalSpacing="1dp" android:numColumns="3" android:layout_weight="0.16"/>
+</LinearLayout>

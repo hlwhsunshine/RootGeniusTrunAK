@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/red_skin_text_color" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/selector_guide_dot" android:scaleType="centerCrop"/>

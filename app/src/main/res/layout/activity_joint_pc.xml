@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_titlebar"/>
+    <include android:id="@+id/view_joint_pc_guide" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/view_joint_pc_guide"/>
+    <include android:id="@+id/view_jointed_pc" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" layout="@layout/view_jointed_pc"/>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/global_new_background_bg" android:layout_width="match_parent" android:layout_height="match_parent">
+    <include layout="@layout/view_not_titlebar"/>
+    <com.shuame.rootgenius.p115ui.view.RootProgressBar android:id="@+id/root_progress_bar" android:layout_width="match_parent" android:layout_height="@dimen/homepage_rooted_scan_circle_progress_height_width"/>
+    <TextView android:textSize="@dimen/sp_18" android:textColor="@color/textcolor_dark_black" android:gravity="center_horizontal" android:id="@+id/tv_root_event" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/circle_block_below_text_margin_top" android:text="@string/wait_rooting"/>
+    <TextView android:textSize="@dimen/sp_15" android:textColor="@color/textcolor_dark_gray2" android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/wait_rooting_possible_reboot"/>
+    <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+    <LinearLayout android:orientation="vertical" android:id="@+id/banner_ad_container" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+</LinearLayout>

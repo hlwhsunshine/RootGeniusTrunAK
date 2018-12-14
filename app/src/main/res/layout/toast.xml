@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:gravity="center" android:background="@drawable/toast_shape" android:paddingLeft="@dimen/toast_padding_left" android:paddingTop="@dimen/toast_padding_top" android:paddingRight="@dimen/toast_padding_left" android:paddingBottom="@dimen/toast_padding_top" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/sp_16" android:textColor="@color/white" android:id="@+id/msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/onekeyroot" android:layout_centerInParent="true"/>
+</RelativeLayout>

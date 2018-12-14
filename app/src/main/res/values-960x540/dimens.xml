@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="circle_block_margin_top_prepare_root_or_updatesu">70dp</dimen>
+    <dimen name="homepage_rooted_introduce_title_textsize">@dimen/sp_18</dimen>
+    <dimen name="homepage_rooted_scan_circle_progress_height_width">230dp</dimen>
+    <dimen name="homepage_rooted_scan_pointer_height_width">270dp</dimen>
+    <dimen name="see_solution_dot_padding">14sp</dimen>
+    <dimen name="sp_16">14sp</dimen>
+    <dimen name="sp_18">16sp</dimen>
+</resources>

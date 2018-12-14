@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:internal="http://schemas.android.com/apk/prv/res/android" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="100dp" android:layout_height="110dp" android:layout_centerInParent="true">
+        <ImageView android:id="@+id/iv_ico" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/bbx_item_def_ico" android:scaleType="fitXY" android:contentDescription="@string/string_content_description"/>
+        <TextView android:textSize="@dimen/sp_15" android:textColor="#ff666666" android:id="@+id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="项目名称"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/iv_remind" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:layout_marginRight="8dp" android:src="@drawable/bbx_item_remind" android:layout_alignParentRight="true" android:contentDescription="@string/string_content_description"/>
+</RelativeLayout>

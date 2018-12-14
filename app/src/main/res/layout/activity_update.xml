@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:shuame="http://schemas.android.com/apk/res-auto" android:background="@color/translucence" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:background="@drawable/alert_dialog_bg" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <include android:id="@+id/view_block_update_remind" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_remind"/>
+        <include android:id="@+id/view_block_update_download_ing" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_download_ing"/>
+        <include android:id="@+id/view_block_update_download_done" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_download_done"/>
+        <include android:id="@+id/view_block_update_download_fail" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_download_fail"/>
+        <include android:id="@+id/view_block_update_download_fail_no_stoarge" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_download_fail_no_stoarge"/>
+        <include android:id="@+id/view_block_update_download_wifi_gone" android:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/dialog_update_download_wifi_gone"/>
+    </RelativeLayout>
+</RelativeLayout>
