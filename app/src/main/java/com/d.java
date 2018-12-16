@@ -32,6 +32,7 @@ import com.shuame.rootgenius.sdk.proto.ProtoData$ServerConf;
 import com.shuame.rootgenius.sdk.proto.ProtoData$Tried;
 import com.shuame.rootgenius.sdk.proto.ProtoData$UnrootResult;
 import com.shuame.rootgenius.sdk.proto.b;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,7 +48,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-@SuppressLint(value={"DefaultLocale"}) public class d {
+@SuppressLint(value = {"DefaultLocale"})
+public class d {
     private static final String a;
     private ProtoData.RootingDev b;
     private ProtoData.RootResult c;
@@ -109,21 +111,21 @@ import java.util.Iterator;
         com.shuame.rootgenius.sdk.c v1 = new com.shuame.rootgenius.sdk.c(-1, 0);
         String v2 = "";
         h.c(d.a, "[tryRootingBy] start id:" + arg12.id + ",md5:" + arg12.md5 + ",url:" + arg12.url + ",type:" + arg12.type);
-        Tried v4 = new Tried();
+        ProtoData.Tried v4 = new ProtoData.Tried();
         long v6 = System.currentTimeMillis();
         arg13.field.put("solutionPath", arg13.field.get("workDir") + "Data/Sol/" + arg12.id);
         arg13.field.put("solutionParam", arg12.param);
         arg13.field.put("lastError", "");
         arg13.field.put("id", Integer.toString(arg12.id));
         arg13.field.put("solutionType", arg12.type);
-        if(arg12.type.equals("so")) {
+        if (arg12.type.equals("so")) {
             arg13.field.put("soluWorkDir", i.a(arg12.id));
         }
 
         i v0 = new i();
         try {
             v3 = new StringBuilder();
-            if(!v0.a(arg12, v3)) {
+            if (!v0.a(arg12, v3)) {
                 goto label_185;
             }
 
@@ -131,11 +133,11 @@ import java.util.Iterator;
             try {
                 h.b(d.a, "suspendStatReport entry");
                 ByteArrayOutputStream v0_5 = new ByteArrayOutputStream();
-                ObjectOutputStream v3_1 = new ObjectOutputStream(((OutputStream)v0_5));
+                ObjectOutputStream v3_1 = new ObjectOutputStream(((OutputStream) v0_5));
                 v3_1.writeObject(this.c);
                 v3_1.close();
                 File v3_2 = new File(d.b().getFilesDir().getAbsolutePath() + "/stat");
-                if(v3_2.exists()) {
+                if (v3_2.exists()) {
                     v3_2.delete();
                 }
 
@@ -143,68 +145,60 @@ import java.util.Iterator;
                 v5.write(v0_5.toByteArray());
                 v5.close();
                 goto label_106;
-            }
-            catch(IOException v0_3) {
+            } catch (IOException v0_3) {
                 try {
                     v0_3.printStackTrace();
-                label_106:
+                    label_106:
                     h.c(d.a, "[tryRootingBy]entry rgMain");
                     v1.a = JniHelper.rgMain(arg13);
                     h.c(d.a, "[tryRootingBy]finish rgMain result:" + v1.a);
-                    if(v1.a == 2) {
+                    if (v1.a == 2) {
                         v1.a = -1;
                     }
 
                     v0_6 = arg13.field.get("lastError");
-                    if(!arg14) {
+                    if (!arg14) {
                         goto label_128;
                     }
 
                     goto label_322;
-                }
-                catch(Exception v0_1) {
+                } catch (Exception v0_1) {
                     goto label_163;
-                }
-                catch(Throwable v0_2) {
+                } catch (Throwable v0_2) {
                     goto label_171;
                 }
-            }
-            catch(FileNotFoundException v0_4) {
+            } catch (FileNotFoundException v0_4) {
                 try {
                     v0_4.printStackTrace();
                     goto label_106;
-                }
-                catch(Exception v0_1) {
+                } catch (Exception v0_1) {
                     goto label_163;
-                }
-                catch(Throwable v0_2) {
+                } catch (Throwable v0_2) {
                     goto label_171;
                 }
             }
-        }
-        catch(Exception v0_1) {
+        } catch (Exception v0_1) {
             goto label_163;
-        }
-        catch(Throwable v0_2) {
+        } catch (Throwable v0_2) {
             goto label_171;
         }
 
-    label_128:
+        label_128:
         try {
             v1.b = 0;
-            if(v1.a == 0) {
-                if(!arg12.type.equals("lua") && !this.p.d()) {
+            if (v1.a == 0) {
+                if (!arg12.type.equals("lua") && !this.p.d()) {
                     goto label_322;
                 }
 
                 v1.a = 1;
-                if(!this.p.c) {
+                if (!this.p.c) {
                     goto label_322;
                 }
 
                 v1.a = 2;
-                if(this.g()) {
-                    if(v1.b == 8) {
+                if (this.g()) {
+                    if (v1.b == 8) {
                         v1.b = 0;
                     }
 
@@ -213,7 +207,7 @@ import java.util.Iterator;
                     goto label_156;
                 }
 
-                if(!new File("/system/xbin/su").exists()) {
+                if (!new File("/system/xbin/su").exists()) {
                     v1.a = -14;
                 }
 
@@ -221,55 +215,50 @@ import java.util.Iterator;
             }
 
             goto label_322;
-        }
-        catch(Throwable v2_1) {
+        } catch (Throwable v2_1) {
             Object v3_3 = v0_6;
             goto label_173;
-        }
-        catch(Exception v2_2) {
+        } catch (Exception v2_2) {
             Exception v10 = v2_2;
             v2_3 = v0_6;
             v0_1 = v10;
             goto label_163;
         }
 
-    label_183:
+        label_183:
         v2_3 = v0_6;
         goto label_156;
-    label_322:
+        label_322:
         v2_3 = v0_6;
         goto label_156;
         try {
-        label_185:
+            label_185:
             v2 = v2 + v3.toString();
             goto label_156;
-        }
-        catch(Throwable v0_2) {
-        label_171:
+        } catch (Throwable v0_2) {
+            label_171:
             v3_4 = v2;
             v2_1 = v0_2;
-        }
-        catch(Exception v0_1) {
+        } catch (Exception v0_1) {
             try {
-            label_163:
+                label_163:
                 v0_1.printStackTrace();
-                if(!arg14) {
+                if (!arg14) {
                     goto label_234;
                 }
-            }
-            catch(Throwable v0_2) {
+            } catch (Throwable v0_2) {
                 goto label_171;
             }
 
             com.shuame.rootgenius.sdk.c v0_7 = v1;
             return v0_7;
-        label_234:
+            label_234:
             v4.id = arg12.id;
             v0_8 = v1.a == 1 || v1.a == 2 ? 1 : v1.a;
             v4.result = v0_8;
-            v4.timeUsed = ((int)(System.currentTimeMillis() - v6));
+            v4.timeUsed = ((int) (System.currentTimeMillis() - v6));
             v4.description = v2;
-            if(v1.a == 2) {
+            if (v1.a == 2) {
                 v4.description = "[need_reboot]" + v4.description;
             }
 
@@ -278,34 +267,34 @@ import java.util.Iterator;
             return v1;
         }
 
-    label_173:
-        if(arg14) {
+        label_173:
+        if (arg14) {
             return v1;
         }
 
         v4.id = arg12.id;
         v0_8 = v1.a == 1 || v1.a == 2 ? 1 : v1.a;
         v4.result = v0_8;
-        v4.timeUsed = ((int)(System.currentTimeMillis() - v6));
+        v4.timeUsed = ((int) (System.currentTimeMillis() - v6));
         v4.description = v3_4;
-        if(v1.a == 2) {
+        if (v1.a == 2) {
             v4.description = "[need_reboot]" + v4.description;
         }
 
         this.c.triedSolutions.triedList.add(v4);
         h.c(d.a, "[tryRootingBy]done,result:" + v1.a);
         throw v2_1;
-    label_156:
-        if(arg14) {
+        label_156:
+        if (arg14) {
             return v1;
         }
 
         v4.id = arg12.id;
         v0_8 = v1.a == 1 || v1.a == 2 ? 1 : v1.a;
         v4.result = v0_8;
-        v4.timeUsed = ((int)(System.currentTimeMillis() - v6));
+        v4.timeUsed = ((int) (System.currentTimeMillis() - v6));
         v4.description = v2;
-        if(v1.a == 2) {
+        if (v1.a == 2) {
             v4.description = "[need_reboot]" + v4.description;
         }
 
@@ -316,13 +305,12 @@ import java.util.Iterator;
 
     private static void a(int arg4) {
         Context v0 = d.b();
-        if(v0 != null) {
+        if (v0 != null) {
             SharedPreferences$Editor v0_1 = v0.getSharedPreferences("rgpref", 0).edit();
             v0_1.putInt("reboot_tried", arg4);
-            if(arg4 != -1) {
+            if (arg4 != -1) {
                 v0_1.putLong("reboot_tried_at", System.currentTimeMillis());
-            }
-            else {
+            } else {
                 v0_1.putLong("reboot_tried_at", -1);
             }
 
@@ -337,21 +325,21 @@ import java.util.Iterator;
     private void a(com.shuame.rootgenius.sdk.c arg7, RootGenius.RootListener arg8) {
         int v0 = -1;
         h.b(d.a, "[onRootFinish]entry");
-        if(arg7.a == 1 && (this.p.b) && !this.p.f().isEmpty()) {
+        if (arg7.a == 1 && (this.p.b) && !this.p.f().isEmpty()) {
             this.r.a(this.p.f(), true);
         }
 
-        this.c.totalTimeUsed = ((int)(System.currentTimeMillis() - this.l));
+        this.c.totalTimeUsed = ((int) (System.currentTimeMillis() - this.l));
         com.shuame.rootgenius.sdk.proto.e.a().a(this.c, this.p.g());
         d.a(v0);
         File v1 = new File(d.g + "stat");
-        if(v1.exists()) {
+        if (v1.exists()) {
             v1.delete();
         }
 
-        if(arg8 != null) {
-            arg8.onProgress(100);
-            if(arg7.a != -6) {
+        if (arg8 != null) {
+            arg8.onProgress(100);//进度100
+            if (arg7.a != -6) {
                 v0 = arg7.a;
             }
 
@@ -367,14 +355,13 @@ import java.util.Iterator;
     }
 
     private static void a(boolean arg3) {
-        if(arg3) {
+        if (arg3) {
             IntentFilter v0 = new IntentFilter();
             v0.addAction("android.intent.action.PACKAGE_ADDED");
             v0.addAction("android.intent.action.PACKAGE_REPLACED");
             v0.addDataScheme("package");
             d.b().registerReceiver(d.v, v0);
-        }
-        else {
+        } else {
             d.u.clear();
             d.b().unregisterReceiver(d.v);
         }
@@ -384,19 +371,18 @@ import java.util.Iterator;
         Throwable v11_1;
         Exception v1_1;
         Exception v11;
-        Data v4_1;
+        Data data;
         Object v0_5;
         QueryRootingResult v5;
         QueryRootingResult v0_4;
-        com.shuame.rootgenius.sdk.c v0_3;
+        com.shuame.rootgenius.sdk.c v0_3;//关于文件操作的东西
         Object v3 = null;
         int v4 = -1;
         int v2 = 0;
-        if(this.t) {
+        if (this.t) {
             this.c.flag |= 8;
             this.t = false;
-        }
-        else {
+        } else {
             this.c.flag &= -9;
         }
 
@@ -405,50 +391,175 @@ import java.util.Iterator;
         this.c.triedSolutions.triedList.clear();
         this.l = System.currentTimeMillis();
         Context context = d.b();
-        this.p.c();
-        if(context == null) {
-            this.a(cVar, listener);
+        this.p.c();// CommUtils.delete(new File(this.f4030d + "Data/.rootgenius"));删除文件
+        if (context == null) {
+            this.a(cVar, listener);//onRootFinish的一些操作
             throw new Exception("context is null.should call initialize first.");
         }
 
         try {
             h.b(d.a, "[startRoot]verifying");
-            if(!d.e(context)) {
+            if (!d.e(context)) {//验证
                 h.b(d.a, "[startRoot]verify fail");
                 v0_3 = cVar;
-            }
-            else {
-                goto label_56;
+            } else {
+                if (listener != null) {
+                    try {
+                        listener.onProgress(1);
+                        label_59:
+                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {//检查是否root
+                            this.g(this.s.su.md5);//superuser相关
+                        }
+
+                        if (listener != null) {
+                            listener.onProcess(7);
+                        }
+
+                        if (ProtoBase.isSuccess(this.s.result)) {
+                            v0_4 = this.s;
+                            h.c(d.a, "[startRoot]use pre request solution");//使用预请求解决方案
+                            v5 = v0_4;
+                        } else {
+                            h.c(d.a, "[startRoot]none pre request, request solution now...");//请求方案
+                            v0_4 = new ProtoData.QueryRootingResult();
+                            new b().a(this.b, v0_4);//下载方案
+                            h.c(d.a, "[startRoot]request solution finish qrRes.result:" + v0_4.result);
+                            v5 = v0_4;
+                        }
+
+                        if (!ProtoBase.isSuccess(v5.result)) {//请求方案失败
+                            h.d(d.a, "[startRoot]request solution fail");
+                            this.b.phoneInfo.productId = "query-failed:" + String.valueOf(v5.result);
+                            cVar.a = -11;
+                            v0_3 = cVar;
+                            this.a(v0_3, listener);//root结束一些操作
+                            h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+                            return v0_3.a;//v0_3.a为-1
+                        }
+
+                        this.b.phoneInfo.productId = !v5.productId.isEmpty() ? v5.productId : "query-empty";
+                        h.c(d.a, "[startRoot]request solution success, product_id:" + this.b.phoneInfo.productId);
+                        if (this.k) {
+                            h.b(d.a, "[startRoot]mRemoteTest is true");
+                            v4 = 0;
+
+                            while (ture) {
+                                if (v4 < v5.solus.size()) {
+                                    v0_5 = v5.solus.get(v4);
+                                    if (((RootSolution) v0_5).id != this.i) {
+                                        ++v4;
+                                    }
+                                } else {
+                                    v0_5 = v3;
+                                }
+                            }
+                        }
+
+                        v5.solus.clear();
+                        if (v0_5 != null) {
+                            v5.solus.add(v0_5);
+                        }
+
+
+                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                            this.g(this.s.su.md5);
+                        }
+
+                        if (this.j) {
+                            h.b(d.a, "[startRoot]mLocalTest is true, use local id:" + this.i);
+                            this.b.phoneInfo.productId = "local-test";
+                            v5.solus.clear();
+                            ArrayList v0_6 = v5.solus;
+                            v4 = this.i;
+                            RootSolution v7 = new RootSolution();
+                            v7.id = v4;
+                            v7.type = "lua";
+                            v0_6.add(v7);
+                        }
+
+                        if (v5.solus.size() != 0) {
+                            data = new Data();
+                            data.cntx = d.b();
+                            data.field = new HashMap();
+                            data.field.put("callFunc", "main");
+                            data.field.put("executePath", d.g + "Data/Bin/");
+                            data.field.put("rootgeniusVer", Integer.toString(84));
+                            data.field.put("androidSdkVer", Integer.toString(Build$VERSION.SDK_INT));
+                            data.field.put("productId", v5.productId);
+                            data.field.put("androidVer", this.b.phoneInfo.androidVersion);
+                            data.field.put("buildDescription", this.b.phoneInfo.buildDescription);
+                            data.field.put("coreVer", this.b.phoneInfo.kernel);
+                            data.field.put("serial", this.b.phoneInfo.adb.serial);
+                            data.field.put("macAddr", this.b.phoneId.mac);
+                            data.field.put("workDir", d.g);
+                            data.field.put("tempDir", d.h);
+                            data.field.put("installScript", this.p.e());
+                            data.field.put("instSuScript", CommUtils.readFrom(this.p.e()).replace("#!/system/bin/sh", ""));
+                            data.field.put("tempRoot", "false");
+                            data.field.put("IMEI", this.b.phoneId.phimei);
+                            data.field.put("IMSI", this.b.phoneId.imsi);
+                            data.field.put("rid", this.b.phoneId.rid);
+                            data.field.put("productModel", this.b.phoneInfo.productModel);
+                            data.field.put("productDevice", this.b.phoneInfo.productDevice);
+                            data.field.put("roHardware", this.b.phoneInfo.phoneHardware);
+                            data.field.put("neo", v5.neo);
+                            data.field.put("phoneId", this.b.phoneInfo.phoneId);
+                            data.field.put("versionName", RgsdkConfig.sChVersionName);
+                            if (v5.rootEngine != null) {
+                                data.field.put("rootEngineUrl", v5.rootEngine.url);
+                                data.field.put("rootEngineMd5", v5.rootEngine.md5);
+                            }
+
+                            data.field.put("phoneId", this.b.phoneInfo.phoneId);
+                            i.a = d.g + "Data/Sol/";
+                            int v6 = d.l();
+                            d.a(-1);
+                        }
+
+                        h.d(d.a, "[startRoot]query result not support");
+                        cVar.a = -4;
+                        v0_3 = cVar;
+                        this.a(v0_3, listener);
+
+
+                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                            this.g(this.s.su.md5);
+                        }
+
+                    } catch (Throwable v0_1) {
+                    }
+                }
+
+                if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                    this.g(this.s.su.md5);
+                }
             }
 
-            goto label_45;
-        }
-        catch(Throwable v0_1) {
-            goto label_439;
-        }
-        catch(Exception v0_2) {
-            goto label_191;
+            this.a(v0_3, listener);
+            h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+            return v0_3.a;
+        } catch (Throwable v0_1) {
         }
 
-    label_56:
-        if(listener != null) {
+
+        label_56:
+        if (listener != null) {
             try {
                 listener.onProgress(1);
-            label_59:
-                if((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                label_59:
+                if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
                     this.g(this.s.su.md5);
                 }
 
-                if(listener != null) {
+                if (listener != null) {
                     listener.onProcess(7);
                 }
 
-                if(ProtoBase.isSuccess(this.s.result)) {
+                if (ProtoBase.isSuccess(this.s.result)) {
                     v0_4 = this.s;
                     h.c(d.a, "[startRoot]use pre request solution");
                     v5 = v0_4;
-                }
-                else {
+                } else {
                     h.c(d.a, "[startRoot]none pre request, request solution now...");
                     v0_4 = new QueryRootingResult();
                     new b().a(this.b, v0_4);
@@ -456,60 +567,134 @@ import java.util.Iterator;
                     v5 = v0_4;
                 }
 
-                if(!ProtoBase.isSuccess(v5.result)) {
-                    goto label_200;
+                if (!ProtoBase.isSuccess(v5.result)) {
+                    h.d(d.a, "[startRoot]request solution fail");
+                    this.b.phoneInfo.productId = "query-failed:" + String.valueOf(v5.result);
+                    cVar.a = -11;
+                    v0_3 = cVar;
+                    h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+                    return v0_3.a;
                 }
 
                 this.b.phoneInfo.productId = !v5.productId.isEmpty() ? v5.productId : "query-empty";
                 h.c(d.a, "[startRoot]request solution success, product_id:" + this.b.phoneInfo.productId);
-                if(this.k) {
+                if (this.k) {
                     h.b(d.a, "[startRoot]mRemoteTest is true");
                     v4 = 0;
-                    while(true) {
-                    label_108:
-                        if(v4 < v5.solus.size()) {
+                    while (true) {
+                        label_108:
+                        if (v4 < v5.solus.size()) {
                             v0_5 = v5.solus.get(v4);
-                            if(((RootSolution)v0_5).id != this.i) {
-                                goto label_197;
+                            if (((RootSolution) v0_5).id != this.i) {
+                                ++v4;
                             }
-                        }
-                        else {
-                            goto label_458;
+                        } else {
+                            v0_5 = v3;
                         }
 
-                        goto label_116;
+                        label_116:
+                        v5.solus.clear();
+                        if (v0_5 != null) {
+                            v5.solus.add(v0_5);
+                        }
+
+                        label_121:
+                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                            this.g(this.s.su.md5);
+                        }
+
+                        if (this.j) {
+                            h.b(d.a, "[startRoot]mLocalTest is true, use local id:" + this.i);
+                            this.b.phoneInfo.productId = "local-test";
+                            v5.solus.clear();
+                            ArrayList v0_6 = v5.solus;
+                            v4 = this.i;
+                            RootSolution v7 = new RootSolution();
+                            v7.id = v4;
+                            v7.type = "lua";
+                            v0_6.add(v7);
+                        }
+
+                        if (v5.solus.size() != 0) {
+                            data = new Data();
+                            data.cntx = d.b();
+                            data.field = new HashMap();
+                            data.field.put("callFunc", "main");
+                            data.field.put("executePath", d.g + "Data/Bin/");
+                            data.field.put("rootgeniusVer", Integer.toString(84));
+                            data.field.put("androidSdkVer", Integer.toString(Build$VERSION.SDK_INT));
+                            data.field.put("productId", v5.productId);
+                            data.field.put("androidVer", this.b.phoneInfo.androidVersion);
+                            data.field.put("buildDescription", this.b.phoneInfo.buildDescription);
+                            data.field.put("coreVer", this.b.phoneInfo.kernel);
+                            data.field.put("serial", this.b.phoneInfo.adb.serial);
+                            data.field.put("macAddr", this.b.phoneId.mac);
+                            data.field.put("workDir", d.g);
+                            data.field.put("tempDir", d.h);
+                            data.field.put("installScript", this.p.e());
+                            data.field.put("instSuScript", CommUtils.readFrom(this.p.e()).replace("#!/system/bin/sh", ""));
+                            data.field.put("tempRoot", "false");
+                            data.field.put("IMEI", this.b.phoneId.phimei);
+                            data.field.put("IMSI", this.b.phoneId.imsi);
+                            data.field.put("rid", this.b.phoneId.rid);
+                            data.field.put("productModel", this.b.phoneInfo.productModel);
+                            data.field.put("productDevice", this.b.phoneInfo.productDevice);
+                            data.field.put("roHardware", this.b.phoneInfo.phoneHardware);
+                            data.field.put("neo", v5.neo);
+                            data.field.put("phoneId", this.b.phoneInfo.phoneId);
+                            data.field.put("versionName", RgsdkConfig.sChVersionName);
+                            if (v5.rootEngine != null) {
+                                data.field.put("rootEngineUrl", v5.rootEngine.url);
+                                data.field.put("rootEngineMd5", v5.rootEngine.md5);
+                            }
+
+                            data.field.put("phoneId", this.b.phoneInfo.phoneId);
+                            i.a = d.g + "Data/Sol/";
+                            int v6 = d.l();
+                            d.a(-1);
+                        }
+
+                        h.d(d.a, "[startRoot]query result not support");
+                        cVar.a = -4;
+                        v0_3 = cVar;
+                        this.a(v0_3, listener);
+                        h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+                        return v0_3.a;
                     }
                 }
 
-                goto label_121;
-            }
-            catch(Throwable v0_1) {
+                if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+                    this.g(this.s.su.md5);
+                }
+
+            } catch (Throwable v0_1) {
                 goto label_439;
-            }
-            catch(Exception v0_2) {
+            } catch (Exception v0_2) {
                 goto label_191;
             }
         }
 
         goto label_59;
-    label_197:
+
+
+        label_197:
         ++v4;
         goto label_108;
-    label_458:
+        label_458:
         v0_5 = v3;
         try {
-        label_116:
+            label_116:
             v5.solus.clear();
-            if(v0_5 != null) {
+            if (v0_5 != null) {
                 v5.solus.add(v0_5);
             }
 
-        label_121:
-            if((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
+            label_121:
+            if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {
                 this.g(this.s.su.md5);
             }
 
-            if(this.j) {
+            if (this.j) {
                 h.b(d.a, "[startRoot]mLocalTest is true, use local id:" + this.i);
                 this.b.phoneInfo.productId = "local-test";
                 v5.solus.clear();
@@ -521,105 +706,131 @@ import java.util.Iterator;
                 v0_6.add(v7);
             }
 
-            if(v5.solus.size() != 0) {
+            if (v5.solus.size() != 0) {
                 goto label_217;
             }
 
             h.d(d.a, "[startRoot]query result not support");
             cVar.a = -4;
             v0_3 = cVar;
-            goto label_45;
-        }
-        catch(Throwable v0_1) {
+            this.a(v0_3, listener);
+            h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+            return v0_3.a;
+        } catch (Throwable v0_1) {
             goto label_439;
-        }
-        catch(Exception v0_2) {
+        } catch (Exception v0_2) {
             goto label_191;
         }
 
         try {
-        label_217:
-            v4_1 = new Data();
-            v4_1.cntx = d.b();
-            v4_1.field = new HashMap();
-            v4_1.field.put("callFunc", "main");
-            v4_1.field.put("executePath", d.g + "Data/Bin/");
-            v4_1.field.put("rootgeniusVer", Integer.toString(84));
-            v4_1.field.put("androidSdkVer", Integer.toString(Build$VERSION.SDK_INT));
-            v4_1.field.put("productId", v5.productId);
-            v4_1.field.put("androidVer", this.b.phoneInfo.androidVersion);
-            v4_1.field.put("buildDescription", this.b.phoneInfo.buildDescription);
-            v4_1.field.put("coreVer", this.b.phoneInfo.kernel);
-            v4_1.field.put("serial", this.b.phoneInfo.adb.serial);
-            v4_1.field.put("macAddr", this.b.phoneId.mac);
-            v4_1.field.put("workDir", d.g);
-            v4_1.field.put("tempDir", d.h);
-            v4_1.field.put("installScript", this.p.e());
-            v4_1.field.put("instSuScript", CommUtils.readFrom(this.p.e()).replace("#!/system/bin/sh", ""));
-            v4_1.field.put("tempRoot", "false");
-            v4_1.field.put("IMEI", this.b.phoneId.phimei);
-            v4_1.field.put("IMSI", this.b.phoneId.imsi);
-            v4_1.field.put("rid", this.b.phoneId.rid);
-            v4_1.field.put("productModel", this.b.phoneInfo.productModel);
-            v4_1.field.put("productDevice", this.b.phoneInfo.productDevice);
-            v4_1.field.put("roHardware", this.b.phoneInfo.phoneHardware);
-            v4_1.field.put("neo", v5.neo);
-            v4_1.field.put("phoneId", this.b.phoneInfo.phoneId);
-            v4_1.field.put("versionName", RgsdkConfig.sChVersionName);
-            if(v5.rootEngine != null) {
-                v4_1.field.put("rootEngineUrl", v5.rootEngine.url);
-                v4_1.field.put("rootEngineMd5", v5.rootEngine.md5);
+            label_217:
+            data = new Data();
+            data.cntx = d.b();
+            data.field = new HashMap();
+            data.field.put("callFunc", "main");
+            data.field.put("executePath", d.g + "Data/Bin/");
+            data.field.put("rootgeniusVer", Integer.toString(84));
+            data.field.put("androidSdkVer", Integer.toString(Build$VERSION.SDK_INT));
+            data.field.put("productId", v5.productId);
+            data.field.put("androidVer", this.b.phoneInfo.androidVersion);
+            data.field.put("buildDescription", this.b.phoneInfo.buildDescription);
+            data.field.put("coreVer", this.b.phoneInfo.kernel);
+            data.field.put("serial", this.b.phoneInfo.adb.serial);
+            data.field.put("macAddr", this.b.phoneId.mac);
+            data.field.put("workDir", d.g);
+            data.field.put("tempDir", d.h);
+            data.field.put("installScript", this.p.e());
+            data.field.put("instSuScript", CommUtils.readFrom(this.p.e()).replace("#!/system/bin/sh", ""));
+            data.field.put("tempRoot", "false");
+            data.field.put("IMEI", this.b.phoneId.phimei);
+            data.field.put("IMSI", this.b.phoneId.imsi);
+            data.field.put("rid", this.b.phoneId.rid);
+            data.field.put("productModel", this.b.phoneInfo.productModel);
+            data.field.put("productDevice", this.b.phoneInfo.productDevice);
+            data.field.put("roHardware", this.b.phoneInfo.phoneHardware);
+            data.field.put("neo", v5.neo);
+            data.field.put("phoneId", this.b.phoneInfo.phoneId);
+            data.field.put("versionName", RgsdkConfig.sChVersionName);
+            if (v5.rootEngine != null) {
+                data.field.put("rootEngineUrl", v5.rootEngine.url);
+                data.field.put("rootEngineMd5", v5.rootEngine.md5);
             }
 
-            v4_1.field.put("phoneId", this.b.phoneInfo.phoneId);
+            data.field.put("phoneId", this.b.phoneInfo.phoneId);
             i.a = d.g + "Data/Sol/";
             int v6 = d.l();
             d.a(-1);
-        }
-        catch(Exception v0_2) {
-            goto label_191;
-        }
 
-        try {
-            while(true) {
-            label_388:
-                if(v2 >= v5.solus.size()) {
-                    goto label_456;
+
+            while (true) {
+                if (v2 >= v5.solus.size()) {
+                    v0_3 = cVar;
+                    this.a(v0_3, listener);
+                    label_46:
+                    h.c(d.a, "[startRoot]done,result:" + v0_3.a);
+                    return v0_3.a;
+
                 }
-
                 int v0_7 = (v2 + 1) * 75 / (v5.solus.size() + 1) + 15;
-                if(listener != null) {
+                if (listener != null) {
                     listener.onProgress(v0_7);
                 }
 
                 v0_5 = v5.solus.get(v2);
-                if(((RootSolution)v0_5).id == 1000) {
+                if (((RootSolution) v0_5).id == 1000) {
                     v3 = v0_5;
                 }
 
-                if(((RootSolution)v0_5).id != v6) {
-                    goto label_412;
-                }
-                else if(v2 + 1 < v5.solus.size()) {
+                if (((RootSolution) v0_5).id != v6) {
+                    v0_3 = this.a(((RootSolution) v0_5), data, false);
+                } else if (v2 + 1 < v5.solus.size()) {
                     break;
+                } else {
+                    v0_3 = this.a(((RootSolution) v0_5), data, false);
                 }
-                else {
+            }
+
+
+        } catch (Exception v0_2) {
+            goto label_191;
+        }
+
+        try {
+            while (true) {
+                label_388:
+                if (v2 >= v5.solus.size()) {
+                    goto label_456;
+                }
+
+                int v0_7 = (v2 + 1) * 75 / (v5.solus.size() + 1) + 15;
+                if (listener != null) {
+                    listener.onProgress(v0_7);
+                }
+
+                v0_5 = v5.solus.get(v2);
+                if (((RootSolution) v0_5).id == 1000) {
+                    v3 = v0_5;
+                }
+
+                if (((RootSolution) v0_5).id != v6) {
+                    goto label_412;
+                } else if (v2 + 1 < v5.solus.size()) {
+                    break;
+                } else {
                     goto label_412;
                 }
             }
-        }
-        catch(Exception v0_2) {
+        } catch (Exception v0_2) {
             goto label_452;
         }
 
         v0_3 = cVar;
         goto label_434;
         try {
-        label_412:
-            v0_3 = this.a(((RootSolution)v0_5), v4_1, false);
-        }
-        catch(Exception v0_2) {
-        label_452:
+            label_412:
+            v0_3 = this.a(((RootSolution) v0_5), data, false);
+        } catch (Exception v0_2) {
+            label_452:
             v11 = v0_2;
             v0_3 = cVar;
             v1_1 = v11;
@@ -627,72 +838,66 @@ import java.util.Iterator;
         }
 
         try {
-            if(v0_3.a != 1 && v0_3.a != 2) {
+            if (v0_3.a != 1 && v0_3.a != 2) {
                 goto label_434;
             }
 
             goto label_419;
-        }
-        catch(Throwable v1_2) {
+        } catch (Throwable v1_2) {
             goto label_442;
-        }
-        catch(Exception v1_1) {
+        } catch (Exception v1_1) {
             goto label_432;
         }
 
-    label_434:
+        label_434:
         ++v2;
         cVar = v0_3;
         goto label_388;
         try {
-        label_419:
-            if(v3 == null) {
+            label_419:
+            if (v3 == null) {
                 goto label_45;
             }
 
-            if((this.e.val & 1) != 0) {
+            if ((this.e.val & 1) != 0) {
                 goto label_45;
             }
 
-            v4_1.field.put("callFunc", "install_rgs");
-            this.a(((RootSolution)v3), v4_1, true);
+            data.field.put("callFunc", "install_rgs");
+            this.a(((RootSolution) v3), data, true);
             goto label_45;
-        }
-        catch(Throwable v1_2) {
-        label_442:
+        } catch (Throwable v1_2) {
+            label_442:
             v11_1 = v1_2;
             cVar = v0_3;
             v0_1 = v11_1;
             goto label_439;
-        }
-        catch(Exception v1_1) {
-        label_432:
+        } catch (Exception v1_1) {
+            label_432:
             goto label_194;
         }
 
-    label_456:
+        label_456:
         v0_3 = cVar;
         goto label_45;
         try {
-        label_200:
+            label_200:
             h.d(d.a, "[startRoot]request solution fail");
             this.b.phoneInfo.productId = "query-failed:" + String.valueOf(v5.result);
             cVar.a = -11;
             v0_3 = cVar;
             goto label_45;
-        }
-        catch(Exception v0_2) {
-        label_191:
+        } catch (Exception v0_2) {
+            label_191:
             v11 = v0_2;
             v0_3 = cVar;
             v1_1 = v11;
         }
 
         try {
-        label_194:
+            label_194:
             v1_1.printStackTrace();
-        }
-        catch(Throwable v1_2) {
+        } catch (Throwable v1_2) {
             v11_1 = v1_2;
             cVar = v0_3;
             v0_1 = v11_1;
@@ -701,18 +906,18 @@ import java.util.Iterator;
 
         this.a(v0_3, listener);
         goto label_46;
-    label_439:
+        label_439:
         this.a(cVar, listener);
         throw v0_1;
-    label_45:
+        label_45:
         this.a(v0_3, listener);
-    label_46:
+        label_46:
         h.c(d.a, "[startRoot]done,result:" + v0_3.a);
         return v0_3.a;
     }
 
     public final void a(Context arg5) {
-        if(d.b() == null) {
+        if (d.b() == null) {
             d.f = new SoftReference(arg5);
             ProtoBase.setChannel(arg5.getPackageName());
             d.g = d.b().getFilesDir().getAbsolutePath() + "/";
@@ -724,28 +929,27 @@ import java.util.Iterator;
             AssetManager v0 = d.b().getAssets();
             try {
                 InputStream v0_2 = v0.open("rgsdk");
-                if(v0_2 == null) {
+                if (v0_2 == null) {
                     goto label_63;
                 }
 
                 CommUtils.unzip(v0_2, d.g);
                 v0_2.close();
-            }
-            catch(IOException v0_1) {
+            } catch (IOException v0_1) {
                 v0_1.printStackTrace();
             }
 
-        label_63:
+            label_63:
             this.n = new c(d.g);
             this.n.h();
             this.p = this.n;
             this.r = new g(d.g);
             File v0_3 = new File(d.g + "Data/Sol/1000");
-            if(!v0_3.exists()) {
+            if (!v0_3.exists()) {
                 new File(d.g + "Data/Bin/rgs").renameTo(v0_3);
             }
 
-            if(this.b.inited) {
+            if (this.b.inited) {
                 goto label_117;
             }
 
@@ -756,49 +960,46 @@ import java.util.Iterator;
             this.b.inited = true;
         }
 
-    label_117:
+        label_117:
         h.b(d.a, "[perpare]workDir:" + d.g + ",tempDir:" + d.h);
         this.d(arg5);
-        if(d.e(arg5)) {
+        if (d.e(arg5)) {
             com.shuame.rootgenius.sdk.proto.c.a().a(this.e);
         }
     }
 
     public final void a(String arg6) {
         h.c(d.a, "[setTestMode]entry");
-        if(arg6 != null) {
-            if(arg6.startsWith("L:")) {
+        if (arg6 != null) {
+            if (arg6.startsWith("L:")) {
                 this.j = true;
-            }
-            else if(arg6.startsWith("R:")) {
+            } else if (arg6.startsWith("R:")) {
                 this.k = true;
-            }
-            else {
+            } else {
                 return;
             }
 
             h.c(d.a, "[setTestMode]mLocalTest " + this.j);
             String v0 = arg6.substring(2);
-            if(v0 == null) {
+            if (v0 == null) {
                 return;
             }
 
-            if(v0.isEmpty()) {
+            if (v0.isEmpty()) {
                 return;
             }
 
-            if(!d.e(d.b())) {
+            if (!d.e(d.b())) {
                 return;
             }
 
             h.c(d.a, "[setTestMode]JniRoot ");
             int v0_1 = Integer.parseInt(v0);
             h.c(d.a, "[setTestMode]JniRoot soluId:" + v0_1);
-            if(v0_1 > 0) {
+            if (v0_1 > 0) {
                 this.i = v0_1;
                 v0 = "mkdir " + d.g + "Data/Sol/\nchmod 777 " + d.g + "Data/Sol/";
-            }
-            else {
+            } else {
                 this.i = 0;
                 this.j = false;
                 this.k = false;
@@ -813,7 +1014,7 @@ import java.util.Iterator;
         boolean v0_5;
         com.shuame.rootgenius.sdk.a.b v1 = new com.shuame.rootgenius.sdk.a.b(d.g);
         com.shuame.rootgenius.sdk.c v2 = new com.shuame.rootgenius.sdk.c(-1, 0);
-        if(!v1.a(arg11, null)) {
+        if (!v1.a(arg11, null)) {
             v2.a = -5;
             this.a(v2, arg12);
             return;
@@ -822,14 +1023,14 @@ import java.util.Iterator;
         this.c.triedSolutions.triedList.clear();
         this.l = System.currentTimeMillis();
         Context v0 = d.b();
-        if(v0 == null) {
+        if (v0 == null) {
             this.a(v2, arg12);
             throw new Exception("context is null.should call initialize first.");
         }
 
         try {
-            if(d.e(v0)) {
-                if(arg12 != null) {
+            if (d.e(v0)) {
+                if (arg12 != null) {
                     arg12.onProgress(1);
                 }
 
@@ -837,11 +1038,11 @@ import java.util.Iterator;
                 String v3 = v1.e();
                 StringBuilder v7 = new StringBuilder("chmod 755 ").append(v3).append("\nsu -c \"");
                 String v0_3 = "";
-                if(!v1.f().isEmpty()) {
+                if (!v1.f().isEmpty()) {
                     v0_3 = this.r.a(v1.f(), false);
                 }
 
-                if(!v0_3.endsWith("\n")) {
+                if (!v0_3.endsWith("\n")) {
                     v0_3 = v0_3 + "\n";
                 }
 
@@ -850,10 +1051,10 @@ import java.util.Iterator;
                 Tried v1_1 = new Tried();
                 v1_1.id = 1002;
                 v1_1.result = 1;
-                v1_1.timeUsed = ((int)(System.currentTimeMillis() - v4));
+                v1_1.timeUsed = ((int) (System.currentTimeMillis() - v4));
                 v1_1.description = v0_3;
                 this.c.triedSolutions.triedList.add(v1_1);
-                if(!a.b()) {
+                if (!a.b()) {
                     goto label_110;
                 }
 
@@ -861,34 +1062,29 @@ import java.util.Iterator;
             }
 
             goto label_99;
-        }
-        catch(Exception v0_1) {
+        } catch (Exception v0_1) {
             goto label_114;
-        }
-        catch(Throwable v0_2) {
+        } catch (Throwable v0_2) {
             goto label_127;
         }
 
-    label_110:
+        label_110:
         int v0_4 = 2;
         try {
             v2.a = v0_4;
-        }
-        catch(Throwable v0_2) {
-        label_127:
+        } catch (Throwable v0_2) {
+            label_127:
             boolean v1_2 = this.p.b;
             this.p.b = false;
             this.a(v2, arg12);
             this.p.b = v1_2;
             throw v0_2;
-        }
-        catch(Exception v0_1) {
+        } catch (Exception v0_1) {
             try {
-            label_114:
+                label_114:
                 v0_1.printStackTrace();
                 v2.a = -1;
-            }
-            catch(Throwable v0_2) {
+            } catch (Throwable v0_2) {
                 goto label_127;
             }
 
@@ -899,12 +1095,12 @@ import java.util.Iterator;
             goto label_106;
         }
 
-    label_99:
+        label_99:
         v0_5 = this.p.b;
         this.p.b = false;
         this.a(v2, arg12);
         this.p.b = v0_5;
-    label_106:
+        label_106:
         h.b(d.a, "[updateSU]finish");
     }
 
@@ -920,14 +1116,13 @@ import java.util.Iterator;
 
     public static Context b() {
         Object v0;
-        if(d.f != null) {
+        if (d.f != null) {
             v0 = d.f.get();
-        }
-        else {
+        } else {
             Context v0_1 = null;
         }
 
-        return ((Context)v0);
+        return ((Context) v0);
     }
 
     public static int b(String arg8) {
@@ -936,21 +1131,21 @@ import java.util.Iterator;
         int v2 = -1;
         PackageInfo v3 = d.b().getPackageManager().getPackageArchiveInfo(arg8, 0);
         d.a(true);
-        if(v3 != null) {
+        if (v3 != null) {
             v0 = 20000;
             String v4 = v3.applicationInfo.packageName;
-            if(d.f(v4) < v3.versionCode) {
+            if (d.f(v4) < v3.versionCode) {
                 Intent v3_1 = new Intent("android.intent.action.VIEW");
                 v3_1.setDataAndType(Uri.fromFile(new File(arg8)), "application/vnd.android.package-archive");
                 v3_1.setFlags(268435456);
                 d.b().startActivity(v3_1);
-                while(true) {
+                while (true) {
                     long v6 = 3000;
                     try {
                         Thread.sleep(v6);
                         v3_2 = v0 - 3000;
-                        if(v4 != null && d.f(v4) > 0 && (d.u.containsKey(v4))) {
-                            if(!d.u.get(v4).booleanValue()) {
+                        if (v4 != null && d.f(v4) > 0 && (d.u.containsKey(v4))) {
+                            if (!d.u.get(v4).booleanValue()) {
                                 goto label_46;
                             }
 
@@ -958,30 +1153,27 @@ import java.util.Iterator;
                         }
 
                         goto label_46;
-                    }
-                    catch(InterruptedException v0_1) {
+                    } catch (InterruptedException v0_1) {
                         v0_1.printStackTrace();
                         return v2;
                     }
 
-                label_39:
+                    label_39:
                     v0 = 0;
                     break;
-                label_46:
-                    if(v3_2 <= 0) {
+                    label_46:
+                    if (v3_2 <= 0) {
                         v0 = v2;
                         break;
                     }
 
                     v0 = v3_2;
                 }
-            }
-            else {
+            } else {
                 d.a(false);
                 return 0;
             }
-        }
-        else {
+        } else {
             v0 = v2;
         }
 
@@ -1005,69 +1197,66 @@ import java.util.Iterator;
         try {
             v5 = new File(arg10.getFilesDir().getAbsolutePath() + "/stat");
             h.c(d.a, "sendStatReport,file size:" + v5.length());
-            if(!v5.exists()) {
+            if (!v5.exists()) {
                 goto label_103;
             }
 
             ObjectInputStream v1 = new ObjectInputStream(new FileInputStream(v5));
             v0_2 = v1.readObject();
             v1.close();
-            if(v0_2 == null) {
+            if (v0_2 == null) {
                 h.d(d.a, "sendStatReport,read object null");
                 goto label_34;
             }
 
             v6 = d.l();
-            if(v6 != v8) {
+            if (v6 != v8) {
                 v7 = a.b();
-                Iterator v4 = ((RootResult)v0_2).triedSolutions.triedList.iterator();
+                Iterator v4 = ((RootResult) v0_2).triedSolutions.triedList.iterator();
                 do {
-                    if(v4.hasNext()) {
+                    if (v4.hasNext()) {
                         v1_1 = v4.next();
-                        if(((Tried)v1_1).id != v6) {
+                        if (((Tried) v1_1).id != v6) {
                             continue;
                         }
 
                         break;
-                    }
-                    else {
+                    } else {
                         goto label_107;
                     }
                 }
-                while(true);
+                while (true);
 
-                int v4_1 = v7 ? 1 : 0;
-                ((Tried)v1_1).result = v4_1;
+                int data = v7 ? 1 : 0;
+                ((Tried) v1_1).result = data;
                 v1_2 = 1;
                 goto label_51;
             }
 
             goto label_63;
-        }
-        catch(Throwable v0) {
+        } catch (Throwable v0) {
             goto label_99;
-        }
-        catch(Exception v0_1) {
+        } catch (Exception v0_1) {
             goto label_96;
         }
 
-    label_107:
+        label_107:
         v1_2 = 0;
         try {
-        label_51:
-            if(v1_2 == 0) {
+            label_51:
+            if (v1_2 == 0) {
                 Tried v4_2 = new Tried();
                 v4_2.id = v6;
                 v1_2 = v7 ? 1 : 0;
                 v4_2.result = v1_2;
                 v4_2.description = "[rebooted-checking-root]";
-                ((RootResult)v0_2).triedSolutions.triedList.add(v4_2);
+                ((RootResult) v0_2).triedSolutions.triedList.add(v4_2);
             }
 
-        label_63:
-            if(CommUtils.checkActiveNetworkConnected(arg10, 30000)) {
-                for(v1_2 = 2; v1_2 > 0; --v1_2) {
-                    if(ProtoBase.isSuccess(com.shuame.rootgenius.sdk.proto.e.a().b(((RootResult)v0_2), this.p.g()))) {
+            label_63:
+            if (CommUtils.checkActiveNetworkConnected(arg10, 30000)) {
+                for (v1_2 = 2; v1_2 > 0; --v1_2) {
+                    if (ProtoBase.isSuccess(com.shuame.rootgenius.sdk.proto.e.a().b(((RootResult) v0_2), this.p.g()))) {
                         break;
                     }
                 }
@@ -1078,29 +1267,25 @@ import java.util.Iterator;
 
             h.c(d.a, "sendStatReport,id " + v6 + ",result:" + this.m);
             goto label_34;
-        label_103:
+            label_103:
             h.c(d.a, "sendStatReport stat file not exists!");
-        }
-        catch(Throwable v0) {
-        }
-        catch(Exception v0_1) {
+        } catch (Throwable v0) {
+        } catch (Exception v0_1) {
             try {
-            label_96:
+                label_96:
                 v0_1.printStackTrace();
-            }
-            catch(Throwable v0) {
+            } catch (Throwable v0) {
                 try {
-                label_99:
+                    label_99:
                     throw v0;
-                }
-                catch(Throwable v0) {
+                } catch (Throwable v0) {
                     __monitor_exit(this);
                     throw v0;
                 }
             }
         }
 
-    label_34:
+        label_34:
         __monitor_exit(this);
     }
 
@@ -1123,22 +1308,21 @@ import java.util.Iterator;
         h.c(d.a, "[preQueryRoot]start");
         v0.a(this.b, this.s);
         h.c(d.a, "[preQueryRoot]product_id:" + this.s.productId);
-        if(ProtoBase.isSuccess(this.s.result)) {
+        if (ProtoBase.isSuccess(this.s.result)) {
             DeviceSolution v2 = new DeviceSolution();
             v2.productId = this.s.productId;
             v2.productName = this.s.productName;
             boolean v0_1 = this.s.solus.size() > 0 ? true : false;
             v2.support = v0_1;
-            if(this.s.su == null || this.s.su.md5.compareToIgnoreCase(this.n.i()) == 0) {
+            if (this.s.su == null || this.s.su.md5.compareToIgnoreCase(this.n.i()) == 0) {
                 h.c(d.a, "[preQueryRoot] no need update su ");
-            }
-            else {
+            } else {
                 v2.su = this.s.su;
                 StringBuilder v3 = new StringBuilder().append(d.g).append("Data/download/");
                 String v0_2 = CommUtils.getFileNameFromUrl(this.s.su.url);
                 int v4 = v0_2.indexOf(45);
                 int v5 = v0_2.lastIndexOf(46);
-                if(v5 >= 0 && v4 >= 0) {
+                if (v5 >= 0 && v4 >= 0) {
                     v0_2 = v0_2.substring(0, v4) + v0_2.substring(v5);
                 }
 
@@ -1148,8 +1332,7 @@ import java.util.Iterator;
             }
 
             v0_3 = v2;
-        }
-        else {
+        } else {
             v0_3 = null;
         }
 
@@ -1171,12 +1354,12 @@ import java.util.Iterator;
 
     private static boolean e(Context arg4) {
         boolean v0 = false;
-        if(arg4 != null) {
+        if (arg4 != null) {
             v0 = JniHelper.verify(arg4);
             h.c(d.a, "[verify]result..." + v0);
         }
 
-        if(!v0) {
+        if (!v0) {
             h.c(d.a, "[verify]fail...");
         }
 
@@ -1188,17 +1371,16 @@ import java.util.Iterator;
         PackageManager v1 = d.b().getPackageManager();
         try {
             PackageInfo v1_2 = v1.getPackageInfo(arg3, 0);
-            if(arg3 == null) {
+            if (arg3 == null) {
                 return v0;
             }
 
-            if(v1_2 == null) {
+            if (v1_2 == null) {
                 return v0;
             }
 
             v0 = v1_2.versionCode;
-        }
-        catch(NameNotFoundException v1_1) {
+        } catch (NameNotFoundException v1_1) {
         }
 
         return v0;
@@ -1208,16 +1390,15 @@ import java.util.Iterator;
         int v0 = 1;
         int v1 = -1;
         Context v2 = d.b();
-        if(v2 == null) {
+        if (v2 == null) {
             throw new Exception("context is null.should call initialize first.");
         }
 
-        if(d.e(v2)) {
+        if (d.e(v2)) {
             this.d.description = this.r.a();
-            if(!this.g()) {
+            if (!this.g()) {
                 this.d.result = 1;
-            }
-            else {
+            } else {
                 this.d.result = 0;
                 v0 = v1;
             }
@@ -1236,19 +1417,17 @@ import java.util.Iterator;
 
     private boolean g(String arg4) {
         boolean v0_1;
-        if(this.q == null || this.p != this.n) {
-        label_23:
+        if (this.q == null || this.p != this.n) {
+            label_23:
             v0_1 = false;
-        }
-        else {
+        } else {
             h.c(d.a, "[startRoot] try to unzip superuser from download");
             com.shuame.rootgenius.sdk.a.b v0 = new com.shuame.rootgenius.sdk.a.b(d.g);
-            if(v0.a(this.q, arg4)) {
+            if (v0.a(this.q, arg4)) {
                 h.c(d.a, "[startRoot] unzip superuser success");
-                this.p = ((a)v0);
+                this.p = ((a) v0);
                 v0_1 = true;
-            }
-            else {
+            } else {
                 h.c(d.a, "[startRoot] unzip superuser fail");
                 goto label_23;
             }
@@ -1277,9 +1456,9 @@ import java.util.Iterator;
     private static int l() {
         int v0 = -1;
         Context v1 = d.b();
-        if(v1 != null) {
+        if (v1 != null) {
             SharedPreferences v1_1 = v1.getSharedPreferences("rgpref", 0);
-            if(System.currentTimeMillis() - v1_1.getLong("reboot_tried_at", -1) <= 600000) {
+            if (System.currentTimeMillis() - v1_1.getLong("reboot_tried_at", -1) <= 600000) {
                 v0 = v1_1.getInt("reboot_tried", v0);
             }
         }
