@@ -232,13 +232,18 @@ public class C1476b extends ProtoBase {
         }
     }
 
+    /**
+     *
+     * @param i    ResponseCode
+     * @param str   result
+     */
     public void OnResponse(int i, String str) {
         if (this.f4073b != null) {
             this.f4073b.result = i;
             this.f4073b.solus.clear();
             if (ProtoBase.isSuccess(i)) {
                 C1473h.m4103b(this.f4072a, "response:" + str);
-                C1476b.m4114a(str, this.f4073b);
+                C1476b.m4114a(str, this.f4073b);//把数据写入到queryRootingResult中
                 if (this.f4073b.f4067su == null || this.f4073b.f4067su.url == null || this.f4073b.f4067su.md5 == null) {
                     C1473h.m4103b(this.f4072a, "root_engine empty");
                 } else {
@@ -254,6 +259,11 @@ public class C1476b extends ProtoBase {
         }
     }
 
+    /**
+     *
+     * @param rootingDev 机型信息
+     * @param queryRootingResult  root需要的一些信息
+     */
     /* renamed from: a */
     public final void mo7290a(RootingDev rootingDev, QueryRootingResult queryRootingResult) {
         this.f4073b = queryRootingResult;

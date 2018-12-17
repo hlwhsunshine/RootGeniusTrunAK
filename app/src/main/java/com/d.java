@@ -85,7 +85,7 @@ public class d {
 
     private d() {
         super();
-        this.b = new RootingDev();
+        this.b = new ProtoData.RootingDev();
         this.c = new RootResult();
         this.d = new UnrootResult();
         this.e = new ServerConf();
@@ -98,7 +98,7 @@ public class d {
         this.p = null;
         this.q = null;
         this.r = null;
-        this.s = new QueryRootingResult();
+        this.s = new ProtoData.QueryRootingResult();
         this.t = false;
     }
 
@@ -322,6 +322,7 @@ public class d {
         return d.o;
     }
 
+    //root结束后的操作
     private void a(com.shuame.rootgenius.sdk.c arg7, RootGenius.RootListener arg8) {
         int v0 = -1;
         h.b(d.a, "[onRootFinish]entry");
@@ -422,7 +423,7 @@ public class d {
                         } else {
                             h.c(d.a, "[startRoot]none pre request, request solution now...");//请求方案
                             v0_4 = new ProtoData.QueryRootingResult();
-                            new b().a(this.b, v0_4);//下载方案
+                            new b().a(this.b, v0_4);//下载方案，并且把数据放入v0_4中
                             h.c(d.a, "[startRoot]request solution finish qrRes.result:" + v0_4.result);
                             v5 = v0_4;
                         }
@@ -437,9 +438,10 @@ public class d {
                             return v0_3.a;//v0_3.a为-1
                         }
 
+                        //this.b 机型等信息
                         this.b.phoneInfo.productId = !v5.productId.isEmpty() ? v5.productId : "query-empty";
                         h.c(d.a, "[startRoot]request solution success, product_id:" + this.b.phoneInfo.productId);
-                        if (this.k) {
+                        if (this.k) {//arg6.startsWith("R:")) 在scanfragment中调用如果  如果有"R:"这里为ture
                             h.b(d.a, "[startRoot]mRemoteTest is true");
                             v4 = 0;
 
@@ -465,7 +467,7 @@ public class d {
                             this.g(this.s.su.md5);
                         }
 
-                        if (this.j) {
+                        if (this.j) {//arg6.startsWith("L:")) 在scanfragment中调用如果  如果有"L:"这里为ture
                             h.b(d.a, "[startRoot]mLocalTest is true, use local id:" + this.i);
                             this.b.phoneInfo.productId = "local-test";
                             v5.solus.clear();
@@ -478,9 +480,11 @@ public class d {
                         }
 
                         if (v5.solus.size() != 0) {
-                            data = new Data();
+                            data = new JniHelper.Data();
                             data.cntx = d.b();
                             data.field = new HashMap();
+                            //d.g getFilesDir().getAbsolutePath() + "/";
+                            //d.h Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath() + "/"
                             data.field.put("callFunc", "main");
                             data.field.put("executePath", d.g + "Data/Bin/");
                             data.field.put("rootgeniusVer", Integer.toString(84));
@@ -512,8 +516,8 @@ public class d {
 
                             data.field.put("phoneId", this.b.phoneInfo.phoneId);
                             i.a = d.g + "Data/Sol/";
-                            int v6 = d.l();
-                            d.a(-1);
+                            int v6 = d.l();//sp操作
+                            d.a(-1);//sp操作
                         }
 
                         h.d(d.a, "[startRoot]query result not support");
@@ -578,7 +582,7 @@ public class d {
 
                 this.b.phoneInfo.productId = !v5.productId.isEmpty() ? v5.productId : "query-empty";
                 h.c(d.a, "[startRoot]request solution success, product_id:" + this.b.phoneInfo.productId);
-                if (this.k) {
+                if (this.k) {//arg6.startsWith("R:")) 在scanfragment中调用如果  如果有"R:"这里为ture
                     h.b(d.a, "[startRoot]mRemoteTest is true");
                     v4 = 0;
                     while (true) {
@@ -722,6 +726,7 @@ public class d {
             goto label_191;
         }
 
+
         try {
             label_217:
             data = new Data();
@@ -788,6 +793,23 @@ public class d {
                 } else {
                     v0_3 = this.a(((RootSolution) v0_5), data, false);
                 }
+
+                if (v0_3.a != 1 && v0_3.a != 2) {
+                    ++v2;
+                    continue;
+                }
+
+                if (v3 == null) {
+                    goto label_45;
+                }
+
+                if ((this.e.val & 1) != 0) {
+                    goto label_45;
+                }
+
+                data.field.put("callFunc", "install_rgs");
+                this.a(((RootSolution) v3), data, true);
+                goto label_45;
             }
 
 
