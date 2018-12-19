@@ -233,7 +233,7 @@ public class C1476b extends ProtoBase {
     }
 
     /**
-     *
+     *请求网络的结果会回调到这里
      * @param i    ResponseCode
      * @param str   result
      */

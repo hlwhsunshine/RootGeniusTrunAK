@@ -1365,15 +1365,15 @@ public class C1469d {
                 e.printStackTrace();
             }
             this.f4054n = new C1465c(f4040g);
-            this.f4054n.mo7265h();
+            this.f4054n.mo7265h();//解压KingUser.zip，来自rgsdk.zip
             this.f4055p = this.f4054n;
             this.f4057r = new C1472g(f4040g);
             File file = new File(f4040g + "Data/Sol/1000");
-            if (!file.exists()) {
+            if (!file.exists()) {//如果不存在 f4040g + "Data/Bin/rgs 命名成"Data/Sol/1000"
                 new File(f4040g + "Data/Bin/rgs").renameTo(file);
             }
             if (!this.f4045b.inited) {
-                this.f4045b = CommUtils.parseRootingDev(C1469d.m4073b());
+                this.f4045b = CommUtils.parseRootingDev(C1469d.m4073b());//获取手机参数
                 this.f4046c.phoneId = this.f4045b.phoneId;
                 this.f4046c.phoneInfo = this.f4045b.phoneInfo;
                 this.f4047d.phoneId = this.f4045b.phoneId;
@@ -1381,7 +1381,7 @@ public class C1469d {
             }
         }
         C1473h.m4103b(f4038a, "[perpare]workDir:" + f4040g + ",tempDir:" + f4041h);
-        m4076d(context);
+        m4076d(context);//stat文件的操作
         if (C1469d.m4079e(context)) {
             C1477c.m4116a().mo7291a(this.f4048e);
         }

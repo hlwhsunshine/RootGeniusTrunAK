@@ -15,9 +15,11 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.Display;
 import android.view.WindowManager;
+
 import com.baidu.mobads.interfaces.utils.IXAdSystemUtils;
 import com.shuame.rootgenius.sdk.proto.ProtoData.AdbInfo;
 import com.shuame.rootgenius.sdk.proto.ProtoData.RootingDev;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,6 +45,7 @@ import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
 import p000a.p001a.p002a.p003a.C0001b;
 import p000a.p001a.p002a.p007c.C0010a;
 

@@ -125,16 +125,16 @@ public class d {
         i v0 = new i();
         try {
             v3 = new StringBuilder();
-            if (!v0.a(arg12, v3)) {
+            if (!v0.a(arg12, v3)) {//下载和解压文件的操作
                 goto label_185;
             }
 
-            d.a(arg12.id);
+            d.a(arg12.id);//sp操作
             try {
                 h.b(d.a, "suspendStatReport entry");
                 ByteArrayOutputStream v0_5 = new ByteArrayOutputStream();
                 ObjectOutputStream v3_1 = new ObjectOutputStream(((OutputStream) v0_5));
-                v3_1.writeObject(this.c);
+                v3_1.writeObject(this.c);//this.c 是RootResult
                 v3_1.close();
                 File v3_2 = new File(d.b().getFilesDir().getAbsolutePath() + "/stat");
                 if (v3_2.exists()) {
@@ -374,8 +374,8 @@ public class d {
         Exception v11;
         Data data;
         Object v0_5;
-        QueryRootingResult v5;
-        QueryRootingResult v0_4;
+        ProtoData.QueryRootingResult v5;
+        ProtoData.QueryRootingResult v0_4;
         com.shuame.rootgenius.sdk.c v0_3;//关于文件操作的东西
         Object v3 = null;
         int v4 = -1;
@@ -408,8 +408,8 @@ public class d {
                     try {
                         listener.onProgress(1);
                         label_59:
-                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {//检查是否root
-                            this.g(this.s.su.md5);//superuser相关
+                        if ((ProtoBase.isSuccess(this.s.result)) && this.s.su != null) {//为true
+                            this.g(this.s.su.md5);//解压NewSuperSU
                         }
 
                         if (listener != null) {
@@ -782,16 +782,16 @@ public class d {
                 }
 
                 v0_5 = v5.solus.get(v2);
-                if (((RootSolution) v0_5).id == 1000) {
+                if (((ProtoData.RootSolution) v0_5).id == 1000) {
                     v3 = v0_5;
                 }
 
-                if (((RootSolution) v0_5).id != v6) {
-                    v0_3 = this.a(((RootSolution) v0_5), data, false);
+                if (((ProtoData.RootSolution) v0_5).id != v6) {
+                    v0_3 = this.a(((ProtoData.RootSolution) v0_5), data, false);
                 } else if (v2 + 1 < v5.solus.size()) {
                     break;
                 } else {
-                    v0_3 = this.a(((RootSolution) v0_5), data, false);
+                    v0_3 = this.a(((ProtoData.RootSolution) v0_5), data, false);
                 }
 
                 if (v0_3.a != 1 && v0_3.a != 2) {
@@ -938,7 +938,7 @@ public class d {
         return v0_3.a;
     }
 
-    public final void a(Context arg5) {
+    public final void a(Context arg5) {//目前还不知道哪里执行的，可以打log
         if (d.b() == null) {
             d.f = new SoftReference(arg5);
             ProtoBase.setChannel(arg5.getPackageName());
@@ -955,7 +955,7 @@ public class d {
                     goto label_63;
                 }
 
-                CommUtils.unzip(v0_2, d.g);
+                CommUtils.unzip(v0_2, d.g);//解压rgsdk到getFilesDir()
                 v0_2.close();
             } catch (IOException v0_1) {
                 v0_1.printStackTrace();
@@ -963,11 +963,11 @@ public class d {
 
             label_63:
             this.n = new c(d.g);
-            this.n.h();
+            this.n.h();//解压KingUser.zip，来自rgsdk.zip
             this.p = this.n;
             this.r = new g(d.g);
             File v0_3 = new File(d.g + "Data/Sol/1000");
-            if (!v0_3.exists()) {
+            if (!v0_3.exists()) {//如果不存在 f4040g + "Data/Bin/rgs 命名成"Data/Sol/1000"
                 new File(d.g + "Data/Bin/rgs").renameTo(v0_3);
             }
 
@@ -975,7 +975,7 @@ public class d {
                 goto label_117;
             }
 
-            this.b = CommUtils.parseRootingDev(d.b());
+            this.b = CommUtils.parseRootingDev(d.b());//获取手机参数
             this.c.phoneId = this.b.phoneId;
             this.c.phoneInfo = this.b.phoneInfo;
             this.d.phoneId = this.b.phoneId;
@@ -984,12 +984,13 @@ public class d {
 
         label_117:
         h.b(d.a, "[perpare]workDir:" + d.g + ",tempDir:" + d.h);
-        this.d(arg5);
-        if (d.e(arg5)) {
-            com.shuame.rootgenius.sdk.proto.c.a().a(this.e);
+        this.d(arg5);//stat的文件操作
+        if (d.e(arg5)) {//verify验证
+            com.shuame.rootgenius.sdk.proto.c.a().a(this.e);//拼接一个默认的xml请求服务器,并且把结果放入this.e中
         }
     }
 
+    //设置权限
     public final void a(String arg6) {
         h.c(d.a, "[setTestMode]entry");
         if (arg6 != null) {
@@ -1032,6 +1033,7 @@ public class d {
         }
     }
 
+    //升级root组件
     public final void a(String arg11, RootListener arg12) {
         boolean v0_5;
         com.shuame.rootgenius.sdk.a.b v1 = new com.shuame.rootgenius.sdk.a.b(d.g);
@@ -1147,6 +1149,7 @@ public class d {
         return ((Context) v0);
     }
 
+    //install什么的
     public static int b(String arg8) {
         int v3_2;
         int v0;
@@ -1328,10 +1331,10 @@ public class d {
         DeviceSolution v0_3;
         b v0 = new b();
         h.c(d.a, "[preQueryRoot]start");
-        v0.a(this.b, this.s);
+        v0.a(this.b, this.s);//网络请求下载，并且把下载的参数放入this.s
         h.c(d.a, "[preQueryRoot]product_id:" + this.s.productId);
         if (ProtoBase.isSuccess(this.s.result)) {
-            DeviceSolution v2 = new DeviceSolution();
+            ProtoData.DeviceSolution v2 = new DeviceSolution();
             v2.productId = this.s.productId;
             v2.productName = this.s.productName;
             boolean v0_1 = this.s.solus.size() > 0 ? true : false;
@@ -1341,7 +1344,7 @@ public class d {
             } else {
                 v2.su = this.s.su;
                 StringBuilder v3 = new StringBuilder().append(d.g).append("Data/download/");
-                String v0_2 = CommUtils.getFileNameFromUrl(this.s.su.url);
+                String v0_2 = CommUtils.getFileNameFromUrl(this.s.su.url);//切割url获取文件名
                 int v4 = v0_2.indexOf(45);
                 int v5 = v0_2.lastIndexOf(46);
                 if (v5 >= 0 && v4 >= 0) {
@@ -1361,6 +1364,7 @@ public class d {
         return v0_3;
     }
 
+    //执行su的
     public final String d(String arg2) {
         String v0 = a.b() ? CommUtils.execCmd(true, arg2) : "permission denied";
         return v0;
@@ -1408,6 +1412,7 @@ public class d {
         return v0;
     }
 
+    //removeRoot一些东西
     public final int f() {
         int v0 = 1;
         int v1 = -1;
@@ -1437,6 +1442,11 @@ public class d {
         return this.m;
     }
 
+    /**
+     *
+     * @param arg4 MD5
+     * @return
+     */
     private boolean g(String arg4) {
         boolean v0_1;
         if (this.q == null || this.p != this.n) {
@@ -1445,7 +1455,8 @@ public class d {
         } else {
             h.c(d.a, "[startRoot] try to unzip superuser from download");
             com.shuame.rootgenius.sdk.a.b v0 = new com.shuame.rootgenius.sdk.a.b(d.g);
-            if (v0.a(this.q, arg4)) {
+            //this.q  getFileDir()+Data/download+super的文件名
+            if (v0.a(this.q, arg4)) {//解压NewSuperSU
                 h.c(d.a, "[startRoot] unzip superuser success");
                 this.p = ((a) v0);
                 v0_1 = true;

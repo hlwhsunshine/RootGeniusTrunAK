@@ -72,7 +72,8 @@ public final class C1474i {
             String str3 = f4065a + rootSolution.f4068id;
             new File(str3).getParentFile().mkdirs();
             for (int i = 2; i > 0; i--) {
-                int download = CommUtils.download(rootSolution.url, str3);
+
+                int download = CommUtils.download(rootSolution.url, str3);//下载的操作
                 if (download == 0) {
                     String calcFileMd5 = CommUtils.calcFileMd5(str3);
                     if (calcFileMd5.equalsIgnoreCase(rootSolution.md5)) {
