@@ -102,7 +102,7 @@ public class d {
         this.t = false;
     }
 
-    private com.shuame.rootgenius.sdk.c a(RootSolution arg12, Data arg13, boolean arg14) {
+    private com.shuame.rootgenius.sdk.c a(ProtoData.RootSolution arg12, Data arg13, boolean arg14) {
         int v0_8;
         String v3_4;
         Object v2_3;

@@ -126,42 +126,42 @@ public class C1476b extends ProtoBase {
             newSerializer.setOutput(stringWriter);
             newSerializer.startDocument(null, Boolean.valueOf(true));
             newSerializer.startTag(null, "param");
-            ProtoEncoding.addElement(newSerializer, "version_name", RgsdkConfig.sChVersionName);
-            ProtoEncoding.addElement(newSerializer, "version_code", "84");
-            ProtoEncoding.addElement(newSerializer, "product_id", rootingDev.phoneInfo.productId);
-            ProtoEncoding.addElement(newSerializer, "VID", rootingDev.phoneInfo.adb.vid);
-            ProtoEncoding.addElement(newSerializer, "PID", rootingDev.phoneInfo.adb.pid);
-            ProtoEncoding.addElement(newSerializer, "PROT", rootingDev.phoneInfo.adb.prot);
-            ProtoEncoding.addElement(newSerializer, "SN", rootingDev.phoneInfo.adb.serial);
-            ProtoEncoding.addElement(newSerializer, "adb_device", rootingDev.phoneInfo.adb.serial);
-            ProtoEncoding.addElement(newSerializer, "imei", rootingDev.phoneId.phimei);
-            ProtoEncoding.addElement(newSerializer, "imsi", rootingDev.phoneId.imsi);
-            ProtoEncoding.addElement(newSerializer, "qimei", rootingDev.phoneId.qimei);
-            ProtoEncoding.addElement(newSerializer, "rid", rootingDev.phoneId.rid);
-            ProtoEncoding.addElement(newSerializer, "phone_id", rootingDev.phoneInfo.phoneId);
-            ProtoEncoding.addElement(newSerializer, "mac_address", rootingDev.phoneId.mac);
-            ProtoEncoding.addElement(newSerializer, "package_name", rootingDev.phoneId.packageName);
-            ProtoEncoding.addElement(newSerializer, "ro_product_device", rootingDev.phoneInfo.productDevice);
-            ProtoEncoding.addElement(newSerializer, "ro_product_model", rootingDev.phoneInfo.productModel);
-            ProtoEncoding.addElement(newSerializer, "ro_hardware", rootingDev.phoneInfo.phoneHardware);
-            ProtoEncoding.addElement(newSerializer, "ro_product_board", rootingDev.phoneInfo.productBoard);
-            ProtoEncoding.addElement(newSerializer, "ro_product_brand", rootingDev.phoneInfo.productBrand);
-            ProtoEncoding.addElement(newSerializer, "ro_product_manufacturer", rootingDev.phoneInfo.productManufacturer);
-            ProtoEncoding.addElement(newSerializer, "ro_product_productid", rootingDev.phoneInfo.productId);
-            ProtoEncoding.addElement(newSerializer, "android_version", rootingDev.phoneInfo.androidVersion);
-            ProtoEncoding.addElement(newSerializer, "firmware_version", rootingDev.phoneInfo.buildId);
-            ProtoEncoding.addElement(newSerializer, "cpu_hardware", rootingDev.phoneInfo.hardware);
-            ProtoEncoding.addElement(newSerializer, "core_version", rootingDev.phoneInfo.kernel);
-            ProtoEncoding.addElement(newSerializer, "region", rootingDev.phoneInfo.region);
-            ProtoEncoding.addElement(newSerializer, "ro_build_description", rootingDev.phoneInfo.buildDescription);
-            ProtoEncoding.addElement(newSerializer, "ro_build_version_sdk", rootingDev.phoneInfo.buildVersionSdk);
-            ProtoEncoding.addElement(newSerializer, "ro_build_fingerprint", rootingDev.phoneInfo.buildFingerPrint);
+            ProtoEncoding.addElement(newSerializer, "version_name", RgsdkConfig.sChVersionName);//版本名称 general_mobile
+            ProtoEncoding.addElement(newSerializer, "version_code", "84");//版本号
+            ProtoEncoding.addElement(newSerializer, "product_id", rootingDev.phoneInfo.productId);//app产品ID，string类型
+            ProtoEncoding.addElement(newSerializer, "VID", rootingDev.phoneInfo.adb.vid);//vid 供应商ID
+            ProtoEncoding.addElement(newSerializer, "PID", rootingDev.phoneInfo.adb.pid);//pid 手机产品ID
+            ProtoEncoding.addElement(newSerializer, "PROT", rootingDev.phoneInfo.adb.prot); //不清楚意思，可以为空
+            ProtoEncoding.addElement(newSerializer, "SN", rootingDev.phoneInfo.adb.serial);//手机序列号
+            ProtoEncoding.addElement(newSerializer, "adb_device", rootingDev.phoneInfo.adb.serial);//手机序列号
+            ProtoEncoding.addElement(newSerializer, "imei", rootingDev.phoneId.phimei);//imei
+            ProtoEncoding.addElement(newSerializer, "imsi", rootingDev.phoneId.imsi);//imsi SIM卡的电子串号
+            ProtoEncoding.addElement(newSerializer, "qimei", rootingDev.phoneId.qimei);//可以为空
+            ProtoEncoding.addElement(newSerializer, "rid", rootingDev.phoneId.rid);//自己生成的
+            ProtoEncoding.addElement(newSerializer, "phone_id", rootingDev.phoneInfo.phoneId);//代码里自己按规则生成的，不用管
+            ProtoEncoding.addElement(newSerializer, "mac_address", rootingDev.phoneId.mac);//mac地址
+            ProtoEncoding.addElement(newSerializer, "package_name", rootingDev.phoneId.packageName);//包名
+            ProtoEncoding.addElement(newSerializer, "ro_product_device", rootingDev.phoneInfo.productDevice);//手机代号  例如小米3和4 代号CANCRO
+            ProtoEncoding.addElement(newSerializer, "ro_product_model", rootingDev.phoneInfo.productModel);//手机型号 例如MI 4LTE
+            ProtoEncoding.addElement(newSerializer, "ro_hardware", rootingDev.phoneInfo.phoneHardware);//硬件  例如qcom
+            ProtoEncoding.addElement(newSerializer, "ro_product_board", rootingDev.phoneInfo.productBoard);//芯片系列代号
+            ProtoEncoding.addElement(newSerializer, "ro_product_brand", rootingDev.phoneInfo.productBrand);//手机品牌
+            ProtoEncoding.addElement(newSerializer, "ro_product_manufacturer", rootingDev.phoneInfo.productManufacturer);//制造商
+            ProtoEncoding.addElement(newSerializer, "ro_product_productid", rootingDev.phoneInfo.productId);//可以为空
+            ProtoEncoding.addElement(newSerializer, "android_version", rootingDev.phoneInfo.androidVersion);//sdk的版本
+            ProtoEncoding.addElement(newSerializer, "firmware_version", rootingDev.phoneInfo.buildId);//系统（固件）版本号 例如小米4 KTU84P
+            ProtoEncoding.addElement(newSerializer, "cpu_hardware", rootingDev.phoneInfo.hardware);//cpu具体的型号
+            ProtoEncoding.addElement(newSerializer, "core_version", rootingDev.phoneInfo.kernel);//内核
+            ProtoEncoding.addElement(newSerializer, "region", rootingDev.phoneInfo.region);//地区  可以为空
+            ProtoEncoding.addElement(newSerializer, "ro_build_description", rootingDev.phoneInfo.buildDescription);//手机具体描述 例如 cancro-user 4.4.4 KTU84P 4.9.18 test-keys
+            ProtoEncoding.addElement(newSerializer, "ro_build_version_sdk", rootingDev.phoneInfo.buildVersionSdk);//sdk的版本号  例如19
+            ProtoEncoding.addElement(newSerializer, "ro_build_fingerprint", rootingDev.phoneInfo.buildFingerPrint);//指纹  例如Xiaomi/cancro/cancro:4.4.4/KTU84P/4.9.18:user/test-keys
             HashMap hashMap = new HashMap();
-            hashMap.put("cores", String.valueOf(rootingDev.phoneInfo.cpuInfo.cores));
-            hashMap.put("arch", rootingDev.phoneInfo.cpuInfo.arch);
-            hashMap.put("hardware", rootingDev.phoneInfo.cpuInfo.hardware);
-            ProtoEncoding.addElement(newSerializer, "cpu", rootingDev.phoneInfo.cpuInfo.processor, hashMap);
-            ProtoEncoding.addElement(newSerializer, "resolution", rootingDev.phoneInfo.resolution);
+            hashMap.put("cores", String.valueOf(rootingDev.phoneInfo.cpuInfo.cores));//核心数
+            hashMap.put("arch", rootingDev.phoneInfo.cpuInfo.arch);//cpu架构
+            hashMap.put("hardware", rootingDev.phoneInfo.cpuInfo.hardware);//cpu型号
+            ProtoEncoding.addElement(newSerializer, "cpu", rootingDev.phoneInfo.cpuInfo.processor, hashMap);//处理器信息
+            ProtoEncoding.addElement(newSerializer, "resolution", rootingDev.phoneInfo.resolution);//分辨率
             newSerializer.endTag(null, "param");
             newSerializer.endDocument();
             newSerializer.flush();
